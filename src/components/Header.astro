@@ -12,16 +12,17 @@ const LOGO_URL = '/logo5.png';
 <header class="site">
   <div class="wrap">
     <div class="nav-row">
-      <nav class="primary">
-        <a href="/about" class={isActive('about')}>The Studio</a>
-        <a href="/services" class={isActive('services')}>Services</a>
-        <a href="/bridal" class={isActive('bridal')}>Bridal</a>
-      </nav>
       <a href="/" class="brand-link" aria-label="Romy Salon & Spa — Home">
         <img src={LOGO_URL} alt="Romy Salon & Spa" class="brand-logo" width="220" height="64" />
       </a>
+      <nav class="primary">
+        <a href="/" class={isActive('home')}>Home</a>
+        <a href="/about" class={isActive('about')}>The Studio</a>
+        <a href="/services" class={isActive('services')}>Services</a>
+        <a href="/bridal" class={isActive('bridal')}>Bridal</a>
+        <a href="/contact" class={isActive('contact')}>Visit</a>
+      </nav>
       <div class="nav-cta">
-        <a href="/contact" class:list={['btn', 'ghost', isActive('contact')]} style="font-size:11px;padding:11px 20px">Visit</a>
         <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn">Book Now</a>
       </div>
     </div>
@@ -32,7 +33,7 @@ const LOGO_URL = '/logo5.png';
   .brand-link{
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start;
     text-decoration:none;
   }
   .brand-logo{
