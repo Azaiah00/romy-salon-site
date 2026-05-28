@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAD9B0"/>
+      <stop offset="100%" stop-color="#B8975B"/>
+    </linearGradient>
+  </defs>
+  <!-- soft rounded square in champagne gold -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- italic serif R, cream -->
+  <text x="32" y="46" font-family="Georgia, 'Cormorant Garamond', 'Times New Roman', serif"
+        font-size="40" font-style="italic" font-weight="500"
+        text-anchor="middle" fill="#FDF8F4">R</text>
+  <!-- subtle floral accent -->
+  <text x="47" y="22" font-family="Georgia, serif" font-size="9" fill="#FDF8F4" opacity="0.7">❀</text>
+</svg>

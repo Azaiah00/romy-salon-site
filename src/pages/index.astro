@@ -1,0 +1,627 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  { name: 'Custom Color & Balayage', price: 'From $185', img: '/blondes4.jpg', desc: "From sun-kissed dimensional balayage to fantasy silver and platinum tones — color crafted from theory, not from a box." },
+  { name: 'Signature Facials', price: 'From $269', img: '/SPA.jpg', desc: 'Customized treatments using HydraFacial and our signature glow protocols. From the Classic ($150) to the Deluxe with LED & gold collagen ($250).' },
+  { name: 'Master Cuts & Styling', price: 'From $95', img: '/projectHair3.jpg', desc: 'Precision cuts that honor your hair type, texture, and lifestyle. Every cut begins with a real consultation.' },
+  { name: 'Luxury Nail Design', price: 'From $85', img: '/nails-gold.jpg', desc: 'From classic neutrals to fantasy tones, metallic finishes, and Swarovski crystal art — each set is a tiny piece of jewelry.' },
+  { name: 'Head Spa & Massage', price: 'From $135', img: '/massage.jpg', desc: 'A deeply restorative ritual: scalp massage, aromatherapy, deep conditioning, neck & shoulder release. Pair with any service.' },
+  { name: 'Bridal & Special Events', price: 'Inquire', img: '/updo.jpg', desc: 'Elegant updos, modern bridal makeup, and quinceañera artistry — for the most photographed day of your life.' },
+];
+
+const reviews = [
+  { stars: 5, quote: "Thank you to Romy and her team for giving this amazing look after having my hair red for 8 years. I really recommend her!", name: 'ANNA M.', meta: 'BestProsInTown · Verified Client', initial: 'A' },
+  { stars: 5, quote: "Romy is the only colorist I'll let near my blonde. Every formula is recorded, every appointment feels intentional. Worth the drive from Arlington.", name: 'JESSICA R.', meta: 'Google · 6 months ago', initial: 'J' },
+  { stars: 5, quote: "The Color Journey ritual was the most relaxing three hours of my year. Walked out looking like a Vogue editorial. Already booked my next one.", name: 'MARIA G.', meta: 'Facebook · 3 weeks ago', initial: 'M' },
+];
+
+const looks = [
+  { src: '/projectHair3.jpg', cls: 'big', alt: 'Caramel balayage transformation' },
+  { src: '/fantasy2.jpeg', cls: '', alt: 'Pink fantasy color' },
+  { src: '/blondes4.jpg', cls: 'tall', alt: 'Platinum silver blonde waves' },
+  { src: '/fantasy10.jpg', cls: '', alt: 'Vivid copper color' },
+  { src: '/projectHair4.jpg', cls: '', alt: 'Balayage ombre blend' },
+  { src: '/transformation10.jpg', cls: 'wide', alt: 'Silver color transformation' },
+  { src: '/fantasy3.jpg', cls: '', alt: 'Teal fantasy color' },
+  { src: '/ProjectHair.jpeg', cls: '', alt: 'Dimensional highlights' },
+  { src: '/color-vivid-red.jpg', cls: '', alt: 'Vivid red color' },
+  { src: '/unias3.webp', cls: '', alt: 'Pink ombre nail design' },
+];
+
+const igTiles = [
+  '/fantasy3.jpg',
+  '/fantasy2.jpeg',
+  '/projectHair3.jpg',
+  '/fantasy10.jpg',
+  '/unias3.webp',
+  '/blondes4.jpg',
+];
+---
+
+<BaseLayout
+  title="Romy Salon & Spa | Master-Stylist Luxury Color & Spa Studio · Old Town Fairfax, VA"
+  description="Old Town Fairfax's master-stylist luxury salon & spa. Custom color, balayage, fantasy tones, facials, bridal, head spa massage. By Romy — color theorist & transformation artist."
+  activePage="home"
+>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow">Master-Stylist Studio · Old Town Fairfax</div>
+        <h1>Every hair color, <span class="italic">personally crafted.</span></h1>
+        <p class="lede">Romy Salon &amp; Spa is the only master-stylist-led luxury color &amp; transformation studio in Old Town Fairfax — where every appointment is a quiet ritual, not a chair rental.</p>
+        <div class="cta-row">
+          <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book a Color Journey</a>
+          <a href="#lookbook" class="btn lg ghost">View the Lookbook</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <span class="ornament-floral"></span>
+        <img src="/about-romy-left4.jpeg" alt="Master Stylist Romy at work" loading="eager" />
+        <div class="award-badge">
+          <div class="stars">★★★★★</div>
+          <div class="text">100% recommend<br>on Facebook · 44 reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="section-eyebrow">The Craft</div>
+    <h2 class="section-h">Signature <span class="italic">Services</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">A curated menu of the services we love most — built around Romy's color specialty and the quiet luxury of an unhurried appointment.</p>
+
+    <div class="services-grid">
+      {services.map((s) => (
+        <div class="service-card">
+          <div class="photo">
+            <span class="price-chip">{s.price}</span>
+            <img src={s.img} alt={s.name} loading="lazy" />
+          </div>
+          <div class="info">
+            <h3>{s.name}</h3>
+            <p>{s.desc}</p>
+            <a href="/services" class="arrow-link">Explore →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- MASTER ROMY -->
+<section class="master-section">
+  <div class="wrap">
+    <div class="master-grid">
+      <div class="master-photo">
+        <img src="/about-romy-left.jpeg" alt="Master Stylist Romy" loading="lazy" />
+      </div>
+      <div class="master-content">
+        <div class="section-eyebrow">Meet The Master</div>
+        <h2 class="section-h"><span class="italic">Romy</span></h2>
+        <div class="ornament"></div>
+        <p class="intro">"Hair is a canvas. My job is to read the light, the skin, the personality — and paint a version of you that feels right the moment you see yourself in the mirror."</p>
+        <p>A true master of the art of styling, Romy transforms lives with every snip of the scissors and stroke of color. As a specialized hair artist, she brings a rare blend of color theory, technical precision, and creative instinct to every chair.</p>
+        <p>Her specialty: custom color. Fantasy shades, silver tones, white-platinum blondes, vivid reds — the work that other stylists send her clients to. In Romy's hands, your hair becomes a canvas for artistic expression.</p>
+
+        <div class="master-credentials">
+          <div class="credential"><span class="num">15+</span><span class="label">Years experience</span></div>
+          <div class="credential"><span class="num">5.0</span><span class="label">Star rating</span></div>
+          <div class="credential"><span class="num">∞</span><span class="label">Color formulas</span></div>
+        </div>
+
+        <a href="/about" class="btn">Read Her Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE RITUAL -->
+<section class="ritual-section">
+  <div class="wrap">
+    <div class="section-eyebrow">The Signature Experience</div>
+    <h2 class="section-h">The Romy <span class="italic">Color Journey</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">A three-hour ritual — not an appointment. Five quiet stages, designed to leave you transformed and unrushed.</p>
+
+    <div class="ritual-stages">
+      <div class="stage"><div class="num">I.</div><h4>Consultation</h4><p>A 20-minute conversation. Goals, history, lifestyle, light. No clippers yet.</p></div>
+      <div class="stage"><div class="num">II.</div><h4>Treatment</h4><p>Deep conditioning + scalp prep. Olaplex bonding for color-treated hair.</p></div>
+      <div class="stage"><div class="num">III.</div><h4>Color</h4><p>Custom formula, hand-painted. Espresso or champagne while it processes.</p></div>
+      <div class="stage"><div class="num">IV.</div><h4>Head Spa</h4><p>A restorative scalp massage during the shampoo. The part everyone secretly comes for.</p></div>
+      <div class="stage"><div class="num">V.</div><h4>The Reveal</h4><p>A finished blowout and styling tutorial so you can recreate the look at home.</p></div>
+    </div>
+
+    <div class="ritual-cta">
+      <div class="price-line">From $375 · approximately 3 hours · by appointment only</div>
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book the Journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="lookbook-section" id="lookbook">
+  <div class="wrap">
+    <div class="section-eyebrow">The Lookbook</div>
+    <h2 class="section-h">Recent <span class="italic">transformations</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">A small selection of recent work. Every guest is photographed with permission — see hundreds more on our Instagram.</p>
+
+    <div class="lookbook-grid">
+      {looks.map((l) => (
+        <div class={`look ${l.cls}`}>
+          <img src={l.src} alt={l.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+
+    <div class="lookbook-cta">
+      <a href="https://www.instagram.com/romy_salonandspa/" target="_blank" rel="noopener" class="btn">Follow @romy_salonandspa</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="video-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Inside the Studio</div>
+    <h2 class="section-h">See the <span class="italic">craft</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">A glimpse into the artistry, the atmosphere, and the transformations that happen every day at Romy Salon &amp; Spa.</p>
+
+    <div class="video-grid">
+      <div class="video-frame">
+        <video autoplay muted loop playsinline poster="/projectHair3.jpg">
+          <source src="/videosalon.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-frame vertical">
+        <video autoplay muted loop playsinline poster="/fantasy2.jpeg">
+          <source src="/videomobile.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Kind Words</div>
+    <h2 class="section-h">What our <span class="italic">guests say</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">5-star ratings on Google, Yelp, Facebook, and BestProsInTown — but the words from our regulars mean the most.</p>
+
+    <div class="reviews-grid">
+      {reviews.map((r) => (
+        <div class="review-card">
+          <div class="stars">{'★'.repeat(r.stars)}</div>
+          <blockquote>{r.quote}</blockquote>
+          <div class="author">
+            <div class="avatar">{r.initial}</div>
+            <div class="author-info">
+              <div class="name">{r.name}</div>
+              <div class="meta">{r.meta}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- BRIDAL TEASER -->
+<section class="bridal-section">
+  <div class="bridal-grid">
+    <div class="bridal-photo"></div>
+    <div class="bridal-content">
+      <div class="section-eyebrow">For the most photographed day of your life</div>
+      <h2>Bridal &amp; <span class="italic">Special Events</span></h2>
+      <p>From the trial to the final pin, Romy Salon crafts bridal hair and makeup with the same precision we bring to every chair.</p>
+      <ul>
+        <li>Bride trial + day-of styling</li>
+        <li>Bridal party packages (4+ guests)</li>
+        <li>Quinceañera artistry (English &amp; Spanish)</li>
+        <li>On-location available within 30 minutes of Old Town Fairfax</li>
+      </ul>
+      <a href="/bridal" class="btn lg gold">Explore Bridal</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="wrap">
+    <div class="location-grid">
+      <div class="location-content">
+        <div class="section-eyebrow" style="text-align:left">Visit The Studio</div>
+        <h2>Old Town <span style="font-style:italic">Fairfax</span></h2>
+        <p class="address">3950 University Drive, Suite 211<br>Fairfax, Virginia 22030</p>
+
+        <div class="contact-row">
+          <div><div class="label">Call</div><div class="val"><a href="tel:+15714075801">571.407.5801</a></div></div>
+          <div><div class="label">Text / WhatsApp</div><div class="val"><a href="sms:+15716828482">571.682.8482</a></div></div>
+        </div>
+
+        <div class="hours-table">
+          <div><span>Monday – Thursday</span><span>10:00 am – 7:00 pm</span></div>
+          <div><span>Friday – Saturday</span><span>9:00 am – 7:00 pm</span></div>
+          <div><span>Sunday</span><span>12:00 pm – 5:00 pm</span></div>
+        </div>
+
+        <a href="https://maps.google.com/?q=3950+University+Drive+Fairfax+VA+22030" target="_blank" rel="noopener" class="btn">Get Directions</a>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn gold" style="margin-left:8px">Book Online</a>
+      </div>
+
+      <div class="location-photo">
+        <img src="/transformation-copper.jpg" alt="Color transformation at Romy Salon" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news-section">
+  <div class="wrap">
+    <h2>The Romy <span style="font-style:italic">Society</span></h2>
+    <p>Quiet monthly notes on new services, color tips, and members-only offers. Never noise.</p>
+    <form class="news-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Welcome'">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit">Join</button>
+    </form>
+  </div>
+</section>
+
+<!-- INSTAGRAM STRIP -->
+<section class="ig-strip">
+  <div class="wrap">
+    <div class="handle">Follow along · <span class="at">@romy_salonandspa</span></div>
+    <div class="ig-grid">
+      {igTiles.map((src) => (
+        <a class="ig-tile" href="https://www.instagram.com/romy_salonandspa/" target="_blank" rel="noopener" aria-label="View on Instagram">
+          <img src={src} alt="" loading="lazy" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  /* HOMEPAGE-SPECIFIC STYLES */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    background:linear-gradient(115deg, var(--bg-cream) 0%, var(--rose-pale) 100%);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+  }
+  .hero .hero-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+    width:100%;padding:60px 0;
+  }
+  .hero .hero-content{padding-right:40px;position:relative;z-index:2}
+  .hero .eyebrow{
+    color:var(--gold-deep);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.42em;text-transform:uppercase;margin-bottom:32px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .hero .eyebrow::before{content:'';display:inline-block;width:36px;height:1px;background:var(--gold)}
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:400;
+    line-height:1.02;letter-spacing:-0.015em;margin-bottom:24px;color:var(--ink);
+  }
+  .hero h1 .italic{font-style:italic;font-weight:400}
+  .hero p.lede{
+    font-size:1.15rem;line-height:1.65;color:var(--ink);margin-bottom:40px;
+    max-width:480px;font-family:'Cormorant Garamond',serif;font-weight:400;
+  }
+  .hero .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .hero .hero-photo{
+    position:relative;aspect-ratio:4/5;overflow:hidden;
+    box-shadow:-20px 30px 60px rgba(167,127,142,0.18);
+  }
+  .hero .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero .hero-photo::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.15) 100%);z-index:1;
+  }
+  .hero .ornament-floral{
+    position:absolute;top:8%;right:42%;width:90px;height:90px;
+    background:radial-gradient(circle, var(--rose) 0%, transparent 60%);
+    opacity:0.4;border-radius:50%;filter:blur(20px);
+  }
+  .hero .award-badge{
+    position:absolute;bottom:28px;left:-18px;background:var(--paper);
+    padding:14px 22px;box-shadow:0 8px 30px rgba(167,127,142,0.2);
+    font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);
+    z-index:2;border-left:3px solid var(--gold);
+  }
+  .hero .award-badge .stars{color:var(--gold);font-size:14px;letter-spacing:0.1em;margin-bottom:2px}
+  .hero .award-badge .text{font-size:13px;line-height:1.3}
+  @media(max-width:900px){
+    .hero{min-height:auto;padding:40px 0}
+    .hero .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:3rem}
+    .hero .hero-content{padding-right:0}
+  }
+
+  /* SERVICES GRID */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  @media(max-width:900px){.services-grid{grid-template-columns:1fr}}
+  .service-card{
+    background:var(--paper);overflow:hidden;
+    box-shadow:0 2px 24px rgba(167,127,142,0.06);transition:all 0.4s ease;cursor:pointer;
+  }
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(167,127,142,0.18)}
+  .service-card .photo{position:relative;aspect-ratio:4/3;overflow:hidden}
+  .service-card .photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+  .service-card:hover .photo img{transform:scale(1.06)}
+  .service-card .photo::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.35) 100%);
+  }
+  .service-card .photo .price-chip{
+    position:absolute;top:18px;right:18px;background:rgba(253,248,244,0.96);color:var(--ink);
+    padding:6px 14px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.1em;z-index:2;
+  }
+  .service-card .info{padding:32px 28px}
+  .service-card .info h3{
+    font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:500;
+    margin-bottom:10px;color:var(--ink);
+  }
+  .service-card .info p{color:var(--ink);font-size:14.5px;line-height:1.65;margin-bottom:18px}
+  .service-card .info .arrow-link{
+    color:var(--ink);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);
+    padding-bottom:3px;transition:all 0.2s;
+  }
+  .service-card .info .arrow-link:hover{color:var(--gold-deep);border-bottom-color:var(--ink)}
+
+  /* MASTER */
+  .master-section{background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%)}
+  .master-grid{display:grid;grid-template-columns:5fr 6fr;gap:90px;align-items:center}
+  @media(max-width:900px){.master-grid{grid-template-columns:1fr;gap:50px}}
+  .master-photo{aspect-ratio:4/5;overflow:hidden;box-shadow:25px 25px 0 var(--rose-pale)}
+  .master-photo img{width:100%;height:100%;object-fit:cover}
+  .master-content .section-eyebrow{text-align:left;margin-bottom:18px}
+  .master-content .section-h{text-align:left;font-size:3rem;margin-bottom:32px}
+  .master-content .ornament{margin-left:0;margin-right:auto;width:50px}
+  .master-content .ornament::after{left:0;transform:translate(0,-50%);padding:0 10px 0 0;background:var(--bg-soft)}
+  .master-content p{font-size:16.5px;line-height:1.85;color:var(--ink);margin-bottom:18px}
+  .master-content p.intro{
+    font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;
+    line-height:1.5;color:var(--ink);margin-bottom:28px;
+  }
+  .master-credentials{display:flex;gap:36px;margin:36px 0;flex-wrap:wrap}
+  .credential{border-left:2px solid var(--gold);padding-left:16px}
+  .credential .num{
+    display:block;font-family:'Cormorant Garamond',serif;font-size:2.2rem;
+    color:var(--ink);font-style:italic;line-height:1;margin-bottom:6px;
+  }
+  .credential .label{
+    font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);
+  }
+
+  /* RITUAL */
+  .ritual-section{background:var(--ink);color:var(--bg);padding:140px 0;position:relative;overflow:hidden}
+  .ritual-section::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 15% 25%, rgba(214,185,129,0.15) 0%, transparent 50%),
+               radial-gradient(circle at 85% 75%, rgba(232,180,184,0.1) 0%, transparent 50%);
+  }
+  .ritual-section .wrap{position:relative;z-index:1}
+  .ritual-section .section-eyebrow{color:var(--gold)}
+  .ritual-section .section-h{color:var(--bg)}
+  .ritual-section .section-sub{color:var(--bg);opacity:0.8}
+  .ritual-section .ornament::after{background:var(--ink)}
+  .ritual-stages{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:60px}
+  @media(max-width:900px){.ritual-stages{grid-template-columns:repeat(2,1fr)}}
+  .stage{text-align:center;padding:30px 16px}
+  .stage .num{
+    font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);
+    font-style:italic;line-height:1;margin-bottom:14px;
+  }
+  .stage h4{
+    font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--bg);
+    margin-bottom:8px;font-weight:500;
+  }
+  .stage p{color:var(--bg);opacity:0.7;font-size:13px;line-height:1.55}
+  .ritual-cta{text-align:center;margin-top:60px}
+  .ritual-cta .price-line{
+    font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold-light);
+    font-style:italic;margin-bottom:24px;
+  }
+
+  /* LOOKBOOK */
+  .lookbook-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:160px;gap:14px;margin-bottom:50px}
+  @media(max-width:900px){.lookbook-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}}
+  .look{overflow:hidden;position:relative;cursor:pointer}
+  .look img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+  .look:hover img{transform:scale(1.08)}
+  .look::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(214,185,129,0) 0%, rgba(232,180,184,0.4) 100%);
+    opacity:0;transition:opacity 0.3s;
+  }
+  .look:hover::after{opacity:1}
+  .look.tall{grid-row:span 2}
+  .look.wide{grid-column:span 2}
+  .look.big{grid-row:span 2;grid-column:span 2}
+  .lookbook-cta{text-align:center}
+
+  /* VIDEO SHOWCASE */
+  .video-section{
+    background:var(--ink);padding:140px 0;position:relative;overflow:hidden;
+  }
+  .video-section::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 30%, rgba(214,185,129,0.12) 0%, transparent 50%),
+               radial-gradient(circle at 80% 70%, rgba(232,180,184,0.08) 0%, transparent 50%);
+  }
+  .video-section .wrap{position:relative;z-index:1}
+  .video-section .section-eyebrow{color:var(--gold)}
+  .video-section .section-h{color:var(--bg)}
+  .video-section .section-sub{color:var(--bg);opacity:0.8}
+  .video-section .ornament::after{background:var(--ink)}
+  .video-grid{
+    display:grid;grid-template-columns:7fr 4fr;gap:24px;margin-top:20px;
+  }
+  @media(max-width:900px){.video-grid{grid-template-columns:1fr}}
+  .video-frame{
+    overflow:hidden;position:relative;
+    box-shadow:0 8px 40px rgba(0,0,0,0.3);
+  }
+  .video-frame video{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .video-frame:first-child{aspect-ratio:16/9}
+  .video-frame.vertical{aspect-ratio:9/16;max-height:500px}
+  @media(max-width:900px){.video-frame.vertical{max-height:400px}}
+
+  /* REVIEWS */
+  .reviews-section{background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-cream) 100%)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  @media(max-width:900px){.reviews-grid{grid-template-columns:1fr}}
+  .review-card{
+    background:var(--paper);padding:40px 36px;position:relative;
+    box-shadow:0 2px 24px rgba(167,127,142,0.07);
+  }
+  .review-card::before{
+    content:'"';position:absolute;top:14px;left:24px;font-family:'Cormorant Garamond',serif;
+    font-size:5rem;color:var(--rose);line-height:1;opacity:0.5;
+  }
+  .review-card .stars{color:var(--gold);font-size:15px;letter-spacing:0.15em;margin-bottom:20px;position:relative;z-index:1}
+  .review-card blockquote{
+    font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.6;
+    font-style:italic;color:var(--ink);margin-bottom:24px;position:relative;z-index:1;
+  }
+  .review-card .author{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:18px}
+  .review-card .avatar{
+    width:44px;height:44px;border-radius:50%;
+    background:linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%);
+    color:var(--paper);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;font-weight:500;
+  }
+  .review-card .author-info .name{
+    font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;
+    letter-spacing:0.08em;color:var(--ink);
+  }
+  .review-card .author-info .meta{
+    font-size:11px;color:var(--ink);font-family:'Montserrat',sans-serif;
+    letter-spacing:0.05em;margin-top:2px;
+  }
+
+  /* BRIDAL TEASER */
+  .bridal-section{background:var(--bg);padding:0}
+  .bridal-grid{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+  @media(max-width:900px){.bridal-grid{grid-template-columns:1fr}}
+  .bridal-photo{
+    background-image:url('/transformation-red.jpg');
+    background-size:cover;background-position:center top;min-height:400px;
+  }
+  .bridal-content{
+    background:linear-gradient(135deg, var(--rose-pale) 0%, var(--bg-cream) 100%);
+    padding:100px 80px;display:flex;flex-direction:column;justify-content:center;
+  }
+  @media(max-width:900px){.bridal-content{padding:60px 30px}}
+  .bridal-content .section-eyebrow{text-align:left;margin-bottom:16px}
+  .bridal-content h2{
+    font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;
+    line-height:1.1;margin-bottom:24px;color:var(--ink);
+  }
+  .bridal-content h2 .italic{font-style:italic}
+  .bridal-content p{
+    font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.6;
+    color:var(--ink);margin-bottom:32px;
+  }
+  .bridal-content ul{list-style:none;padding:0;margin-bottom:36px}
+  .bridal-content li{
+    padding:8px 0;color:var(--ink);font-size:15px;display:flex;gap:12px;
+  }
+  .bridal-content li::before{content:'❀';color:var(--rose)}
+
+  /* LOCATION */
+  .location-section{background:var(--bg-soft)}
+  .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  @media(max-width:900px){.location-grid{grid-template-columns:1fr}}
+  .location-content h2{
+    font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;
+    margin-bottom:24px;color:var(--ink);
+  }
+  .location-content .address{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;
+    color:var(--ink);margin-bottom:24px;line-height:1.5;
+  }
+  .hours-table{margin:32px 0 40px;width:100%;border-top:1px solid var(--line)}
+  .hours-table div{
+    display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);
+    font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:0.05em;
+  }
+  .hours-table div span:first-child{
+    color:var(--ink);text-transform:uppercase;font-weight:600;
+    letter-spacing:0.15em;font-size:11.5px;
+  }
+  .hours-table div span:last-child{color:var(--ink)}
+  .location-photo{aspect-ratio:1/1;overflow:hidden;box-shadow:-20px 20px 0 var(--rose-pale)}
+  .location-photo img{width:100%;height:100%;object-fit:cover}
+  .contact-row{display:flex;gap:30px;margin:24px 0 40px;flex-wrap:wrap}
+  .contact-row > div{border-left:2px solid var(--gold);padding-left:16px}
+  .contact-row .label{
+    font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--ink);margin-bottom:4px;font-weight:600;
+  }
+  .contact-row .val{
+    font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);font-style:italic;
+  }
+
+  /* NEWSLETTER */
+  .news-section{
+    background:linear-gradient(135deg, var(--rose-pale) 0%, var(--bg-cream) 100%);
+    text-align:center;padding:100px 0;
+  }
+  .news-section h2{
+    font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400;
+    margin-bottom:18px;color:var(--ink);
+  }
+  .news-section p{
+    font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--ink);
+    margin-bottom:36px;font-style:italic;
+  }
+  .news-form{display:flex;max-width:480px;margin:0 auto;gap:0}
+  .news-form input{
+    flex:1;padding:16px 20px;border:1px solid var(--ink);background:var(--paper);
+    font-family:'Open Sans',sans-serif;font-size:14px;color:var(--ink);border-right:none;
+  }
+  .news-form input:focus{outline:none;border-color:var(--gold)}
+  .news-form button{
+    padding:16px 26px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);
+    font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;
+  }
+  .news-form button:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+
+  /* INSTAGRAM */
+  .ig-strip{background:var(--bg);padding:80px 0 40px;text-align:center}
+  .ig-strip .handle{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;
+    color:var(--ink);margin-bottom:28px;
+  }
+  .ig-strip .handle .at{color:var(--gold-deep)}
+  .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  @media(max-width:900px){.ig-grid{grid-template-columns:repeat(3,1fr)}}
+  .ig-grid .ig-tile{aspect-ratio:1/1;overflow:hidden;position:relative}
+  .ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s,filter 0.3s}
+  .ig-grid .ig-tile:hover img{transform:scale(1.08);filter:brightness(0.85)}
+</style>

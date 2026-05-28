@@ -1,0 +1,49 @@
+---
+interface Props {
+  activePage?: 'home' | 'about' | 'services' | 'bridal' | 'contact';
+}
+const { activePage } = Astro.props;
+
+const isActive = (page: string) => activePage === page ? 'active' : '';
+
+// Logo — served locally from public/logo5.png
+const LOGO_URL = '/logo5.png';
+---
+<header class="site">
+  <div class="wrap">
+    <div class="nav-row">
+      <nav class="primary">
+        <a href="/about" class={isActive('about')}>The Studio</a>
+        <a href="/services" class={isActive('services')}>Services</a>
+        <a href="/bridal" class={isActive('bridal')}>Bridal</a>
+      </nav>
+      <a href="/" class="brand-link" aria-label="Romy Salon & Spa — Home">
+        <img src={LOGO_URL} alt="Romy Salon & Spa" class="brand-logo" width="220" height="64" />
+      </a>
+      <div class="nav-cta">
+        <a href="/contact" class:list={['btn', 'ghost', isActive('contact')]} style="font-size:11px;padding:11px 20px">Visit</a>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn">Book Now</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .brand-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+  }
+  .brand-logo{
+    height:56px;
+    width:auto;
+    max-width:240px;
+    object-fit:contain;
+    transition:opacity 0.2s;
+  }
+  .brand-link:hover .brand-logo{opacity:0.85}
+  @media(max-width:900px){
+    .brand-logo{height:42px;max-width:180px}
+  }
+</style>

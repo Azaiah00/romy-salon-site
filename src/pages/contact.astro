@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'Do you accept walk-ins?',
+    a: "We accept walk-ins when stylists have openings, but we're an appointment-first studio. To guarantee a chair (and the right stylist), please book online via Mangomint or call ahead. Sunday appointments fill quickly — book at least a week out for weekends.",
+  },
+  {
+    q: 'How far in advance should I book a color appointment?',
+    a: 'For standard color or balayage with Romy, please book 2–3 weeks ahead. For color corrections (which require longer appointments), 4–6 weeks ahead. For bridal services, please inquire as early as possible — we typically book bridal trials 2–4 months ahead.',
+  },
+  {
+    q: "What's your cancellation policy?",
+    a: "We ask for 24 hours' notice for cancellations or reschedules. Cancellations within 24 hours are subject to a 50% service charge; no-shows are charged 100%. We understand life happens — please call or text us as soon as you know.",
+  },
+  {
+    q: 'Do you offer gift cards?',
+    a: 'Yes — digital gift cards in any amount are available through our Mangomint booking page. They never expire and can be used for any service or retail product. Great for birthdays, Mother’s Day, and "you’ve had a hard month" gifts.',
+  },
+  {
+    q: '¿Hablan español?',
+    a: 'Sí — Romy y varias de las estilistas hablan español con fluidez. Llámanos al 571.407.5801 o envíanos un mensaje al 571.682.8482 para reservar tu cita en español.',
+  },
+  {
+    q: 'Do you take new clients for color correction?',
+    a: 'Yes, but color corrections require a complimentary consultation first (in person or via video) so Romy can assess the hair, plan the multi-step approach, and quote accurately. Email a few photos in natural light to info@romysalon.com to start the conversation.',
+  },
+  {
+    q: 'Are you Olaplex certified?',
+    a: "Yes. We're an authorized Olaplex salon, and bond-builder is included in every color service at no additional cost. We also carry the full retail line for at-home care.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Visit & Book | Romy Salon & Spa · 3950 University Dr, Fairfax VA"
+  description="Visit Romy Salon & Spa in Old Town Fairfax, VA. Hours, parking, directions, contact info, and live online booking."
+  activePage="contact"
+>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<!-- BANNER -->
+<div class="page-banner">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / Visit &amp; Book</div>
+    <h1>Visit, call, <span class="italic">or book online</span></h1>
+    <p class="subtitle">We're at 3950 University Drive, Suite 211 — in the heart of Old Town Fairfax. Free street parking and easy access from I-66.</p>
+  </div>
+</div>
+
+<!-- CONTACT GRID -->
+<section style="padding:80px 0">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- INFO CARD -->
+      <div class="info-card">
+        <h3>The <span class="italic">Studio</span></h3>
+        <div class="small-sub">Find us · contact us</div>
+
+        <div class="info-block">
+          <div class="label">Address</div>
+          <div class="val address">3950 University Drive<br>Suite 211<br>Fairfax, VA 22030</div>
+        </div>
+        <div class="info-block">
+          <div class="label">Call</div>
+          <div class="val"><a href="tel:+15714075801">571.407.5801</a></div>
+        </div>
+        <div class="info-block">
+          <div class="label">Text / WhatsApp</div>
+          <div class="val"><a href="sms:+15716828482">571.682.8482</a></div>
+        </div>
+        <div class="info-block">
+          <div class="label">Email</div>
+          <div class="val"><a href="mailto:info@romysalon.com">info@romysalon.com</a></div>
+        </div>
+
+        <div class="info-block">
+          <div class="label">Hours</div>
+          <div style="margin-top:10px">
+            <div class="hours-block"><span>Mon–Thu</span><span>10:00 am – 7:00 pm</span></div>
+            <div class="hours-block"><span>Friday</span><span>9:00 am – 7:00 pm</span></div>
+            <div class="hours-block"><span>Saturday</span><span>9:00 am – 7:00 pm</span></div>
+            <div class="hours-block"><span>Sunday</span><span>12:00 pm – 5:00 pm</span></div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="label">Parking</div>
+          <div class="val" style="font-size:14px;font-family:'Open Sans',sans-serif;font-style:normal;line-height:1.7">
+            Free street parking along University Drive. Public garage one block north (Old Town Hall lot, 10455 Armstrong St) — first hour free.
+          </div>
+        </div>
+
+        <div style="margin-top:30px">
+          <a href="https://maps.google.com/?q=3950+University+Drive+Fairfax+VA+22030" target="_blank" rel="noopener" class="btn">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- BOOKING IFRAME -->
+      <div class="booking-wrap">
+        <div class="bk-header">
+          <h3>Book <span class="italic">online</span></h3>
+          <p>Powered by Mangomint · Live availability</p>
+        </div>
+        <div class="iframe-box">
+          <div class="placeholder">
+            <div class="lbl">— Booking Demo —</div>
+            <h4>Live <span style="font-style:italic">Mangomint</span> booking</h4>
+            <p>In the live site, this panel will embed Romy's real Mangomint booking widget so guests can browse availability and book without leaving the page. For now, the button below opens the live booking in a new window.</p>
+            <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Open Live Booking</a>
+            <p style="margin-top:18px;font-size:12px;color:var(--ink);opacity:0.7;font-style:normal;font-family:'Montserrat',sans-serif;letter-spacing:0.04em">Or text us at 571.682.8482</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="map-wrap">
+    <iframe class="iframe-real" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.3532920275466!2d-77.30789112378203!3d38.847269271734675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e93bed5649d%3A0x45e03670d14e501e!2s3950%20University%20Dr%2C%20Fairfax%2C%20VA%2022030!5e0!3m2!1sen!2sus!4v1756844663772!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Frequently Asked</div>
+    <h2 class="section-h">Before your <span class="italic">first visit</span></h2>
+    <div class="ornament"></div>
+
+    <div class="faq-list">
+
+      {faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.q}</summary>
+          <div class="body">{f.a}</div>
+        </details>
+      ))}
+
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .contact-grid{
+    display:grid;grid-template-columns:5fr 7fr;gap:60px;align-items:start;margin-top:30px;
+  }
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+  .info-card{
+    background:var(--paper);padding:46px;
+    box-shadow:0 2px 24px rgba(167,127,142,0.07);
+  }
+  .info-card h3{
+    font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:500;
+    margin-bottom:8px;color:var(--ink);
+  }
+  .info-card h3 .italic{font-style:italic}
+  .info-card .small-sub{
+    font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px;font-weight:600;
+  }
+  .info-block{
+    padding:16px 0;border-bottom:1px solid var(--line);
+  }
+  .info-block:last-child{border-bottom:0}
+  .info-block .label{
+    font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--ink);margin-bottom:6px;font-weight:600;
+  }
+  .info-block .val{
+    font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);
+  }
+  .info-block .val a{border-bottom:1px dotted var(--gold)}
+  .info-block .val .italic{font-style:italic}
+  .info-block .val.address{line-height:1.5}
+
+  .hours-block{display:flex;justify-content:space-between;padding:8px 0;
+    font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:0.03em}
+  .hours-block:not(:last-child){border-bottom:1px dotted var(--line)}
+  .hours-block span:first-child{
+    color:var(--ink);text-transform:uppercase;font-weight:600;
+    letter-spacing:0.15em;font-size:11px;
+  }
+  .hours-block span:last-child{color:var(--ink)}
+
+  /* BOOKING IFRAME */
+  .booking-wrap{
+    background:var(--paper);
+    box-shadow:0 2px 24px rgba(167,127,142,0.07);
+    overflow:hidden;
+  }
+  .booking-wrap .bk-header{
+    padding:30px 40px;border-bottom:1px solid var(--line);
+    background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);
+  }
+  .booking-wrap .bk-header h3{
+    font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;
+    margin-bottom:4px;color:var(--ink);
+  }
+  .booking-wrap .bk-header h3 .italic{font-style:italic}
+  .booking-wrap .bk-header p{
+    font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.15em;
+    text-transform:uppercase;color:var(--gold-deep);font-weight:600;
+  }
+  .iframe-box{
+    height:700px;overflow:hidden;background:var(--bg);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    padding:60px 30px;text-align:center;
+  }
+  .iframe-box iframe{width:100%;height:100%;border:0}
+  .iframe-box .placeholder{
+    max-width:480px;
+  }
+  .iframe-box .placeholder .lbl{
+    font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.25em;
+    text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;font-weight:600;
+  }
+  .iframe-box .placeholder h4{
+    font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:400;
+    color:var(--ink);margin-bottom:14px;
+  }
+  .iframe-box .placeholder p{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--ink);font-size:1.15rem;margin-bottom:28px;
+  }
+
+  /* MAP */
+  .map-section{padding:0;background:var(--bg)}
+  .map-wrap{
+    position:relative;height:480px;
+  }
+  .map-wrap .iframe-real{
+    width:100%;height:100%;border:0;
+  }
+
+  /* FAQ */
+  .faq-section{
+    background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  }
+  .faq-list{max-width:820px;margin:30px auto 0}
+  .faq{
+    background:var(--paper);margin-bottom:12px;
+    box-shadow:0 1px 8px rgba(167,127,142,0.04);
+  }
+  .faq summary{
+    padding:24px 30px;cursor:pointer;
+    font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;
+    color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:'+';color:var(--gold-deep);font-size:1.8rem;font-weight:300;line-height:1;
+    transition:transform 0.2s;
+  }
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq .body{
+    padding:0 30px 28px;color:var(--ink);font-size:15px;line-height:1.7;
+  }
+</style>

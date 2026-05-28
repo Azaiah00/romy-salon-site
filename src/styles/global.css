@@ -1,0 +1,222 @@
+/* ROMY SALON & SPA — Global styles
+ * Palette: champagne gold (Romy's brand) + blush pink + ivory + black text
+ * Typography: Cormorant Garamond (display) + Montserrat (UI) + Open Sans (body)
+ */
+
+:root{
+  --bg:#FDF8F4;
+  --bg-soft:#FAF0EC;
+  --bg-cream:#F6EBE4;
+  --paper:#FFFFFF;
+  --gold:#D6B981;
+  --gold-deep:#B8975B;
+  --gold-light:#EAD9B0;
+  --rose:#E8B4B8;
+  --rose-soft:#F5D5D7;
+  --rose-pale:#FCE9EB;
+  --mauve:#A67F8E;
+  --mauve-deep:#7D5C6B;
+  --ink:#000000;
+  --line:#EFE0DC;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Open Sans','Helvetica Neue',sans-serif;
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.wrap{padding:0 22px}}
+
+/* TOP BAR + HEADER */
+.top-bar{
+  background:var(--ink);color:var(--bg);text-align:center;padding:9px 0;
+  font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:0.15em;text-transform:uppercase;
+}
+.top-bar a{color:var(--gold-light);border-bottom:1px solid transparent;transition:border-color 0.2s}
+.top-bar a:hover{border-bottom-color:var(--gold)}
+
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,248,244,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+header.site .nav-row{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px 0;gap:24px;
+}
+header.site nav.primary{display:flex;gap:36px;justify-content:flex-end;align-items:center}
+header.site nav.primary a{
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;transition:color 0.2s;position:relative;
+}
+header.site nav.primary a::after{
+  content:'';position:absolute;left:50%;bottom:-6px;width:0;height:1px;
+  background:var(--gold);transition:all 0.25s;transform:translateX(-50%);
+}
+header.site nav.primary a:hover::after, header.site nav.primary a.active::after{width:80%}
+header.site .brand{
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.7rem;
+  text-align:center;color:var(--ink);letter-spacing:0.02em;
+}
+header.site .brand .small{
+  display:block;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;
+  font-family:'Montserrat',sans-serif;font-weight:600;color:var(--gold-deep);margin-top:2px;
+}
+header.site .nav-cta{display:flex;justify-content:flex-end;align-items:center;gap:16px}
+@media(max-width:900px){
+  header.site .nav-row{grid-template-columns:auto 1fr auto}
+  header.site nav.primary{display:none}
+  header.site .brand{text-align:left}
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;padding:13px 28px;
+  background:var(--ink);color:var(--bg);border:1px solid var(--ink);border-radius:0;
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;
+}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.lg{padding:18px 38px;font-size:12px}
+
+/* SECTIONS */
+section{padding:120px 0;position:relative}
+@media(max-width:900px){section{padding:80px 0}}
+.section-eyebrow{
+  color:var(--gold-deep);font-family:'Montserrat',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;
+  margin-bottom:16px;text-align:center;
+}
+.section-h{
+  font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:400;
+  text-align:center;line-height:1.1;letter-spacing:-0.01em;margin-bottom:18px;color:var(--ink);
+}
+.section-h .italic{font-style:italic}
+.section-sub{
+  text-align:center;max-width:680px;margin:0 auto 70px;
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--ink);line-height:1.6;
+}
+.ornament{
+  margin:14px auto 28px;width:60px;height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);position:relative;
+}
+.ornament::after{
+  content:'❀';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:var(--bg);padding:0 10px;color:var(--gold);font-size:11px;
+}
+@media(max-width:900px){.section-h{font-size:2.4rem}}
+
+/* PAGE BANNER (for inner pages) */
+.page-banner{
+  background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);
+  padding:100px 0 80px;text-align:center;border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.page-banner::before{
+  content:'';position:absolute;top:10%;right:10%;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle, var(--rose) 0%, transparent 60%);
+  opacity:0.3;filter:blur(40px);
+}
+.page-banner .breadcrumb{
+  font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold-deep);margin-bottom:24px;
+}
+.page-banner h1{
+  font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:400;
+  line-height:1.05;letter-spacing:-0.01em;color:var(--ink);max-width:780px;margin:0 auto 18px;
+}
+.page-banner h1 .italic{font-style:italic}
+.page-banner p.subtitle{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;
+  color:var(--ink);max-width:620px;margin:0 auto;
+}
+@media(max-width:900px){.page-banner h1{font-size:2.6rem}.page-banner{padding:60px 0 50px}}
+
+/* CARDS */
+.card-shell{
+  background:var(--paper);overflow:hidden;
+  box-shadow:0 2px 24px rgba(167,127,142,0.06);transition:all 0.4s ease;
+}
+.card-shell:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(167,127,142,0.18)}
+
+/* PRICE TABLES */
+.price-list{
+  background:var(--paper);padding:48px;
+  box-shadow:0 2px 24px rgba(167,127,142,0.06);margin-bottom:32px;
+}
+.price-list h3{
+  font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;
+  margin-bottom:8px;color:var(--ink);
+}
+.price-list .cat-sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--ink);margin-bottom:30px;font-size:1.1rem;
+}
+.price-list .row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:18px 0;border-bottom:1px dotted var(--line);gap:20px;
+}
+.price-list .row:last-child{border-bottom:0}
+.price-list .row .name{
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);
+  flex:1;
+}
+.price-list .row .name .desc{
+  display:block;font-family:'Open Sans',sans-serif;font-size:13px;font-style:normal;
+  font-weight:300;color:var(--ink);margin-top:2px;line-height:1.5;
+}
+.price-list .row .price{
+  font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--gold-deep);
+  white-space:nowrap;
+}
+
+/* FOOTER */
+footer.site{background:var(--ink);color:var(--bg);padding:80px 0 40px}
+footer.site .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+@media(max-width:900px){footer.site .ft-grid{grid-template-columns:1fr 1fr;gap:40px}}
+footer.site .brand-block .logo{
+  font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;color:var(--bg);margin-bottom:8px;
+}
+footer.site .brand-block .footer-logo{
+  height:48px;width:auto;max-width:200px;margin-bottom:8px;
+  /* logo5.png is champagne gold on transparent — shows beautifully on the dark footer */
+}
+footer.site .brand-block .tag{
+  font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:24px;
+}
+footer.site .brand-block p{color:var(--bg);opacity:0.7;font-size:14.5px;line-height:1.7;max-width:340px}
+footer.site h5{
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+}
+footer.site ul{list-style:none;padding:0}
+footer.site li{margin-bottom:10px}
+footer.site li a{color:var(--bg);opacity:0.7;font-size:14px;transition:opacity 0.2s}
+footer.site li a:hover{opacity:1;color:var(--gold-light)}
+footer.site .social{display:flex;gap:14px;margin-top:14px}
+footer.site .social a{
+  width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  font-size:13px;transition:all 0.25s;
+}
+footer.site .social a:hover{background:var(--gold);color:var(--ink)}
+footer.site .ft-bar{
+  border-top:1px solid rgba(255,255,255,0.1);padding-top:30px;
+  display:flex;justify-content:space-between;color:var(--bg);opacity:0.6;
+  font-size:11.5px;font-family:'Montserrat',sans-serif;letter-spacing:0.1em;flex-wrap:wrap;gap:14px;
+}
