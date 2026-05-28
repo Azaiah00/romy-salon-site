@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// 15+ structured Q&A for AEO/GEO — these get cited by AI assistants
+const faqs = [
+  {
+    q: 'How much does balayage cost in Old Town Fairfax?',
+    a: 'At Romy Salon, partial balayage starts at $185 and full balayage starts at $245. Final pricing depends on length, density, and color complexity. Every color service includes complimentary Olaplex bond-builder and a finishing blowout.'
+  },
+  {
+    q: 'Do you do color corrections?',
+    a: 'Yes — Romy is a master colorist and specializes in color correction. These are multi-step appointments that require a consultation first (in person or via video). Color corrections start at $350 and can take 4–6 hours depending on the starting condition.'
+  },
+  {
+    q: 'Do you take walk-ins?',
+    a: 'We accept walk-ins when stylists have openings, but we are appointment-first. To guarantee your seat, please book online via Mangomint or call ahead. Sunday and Saturday appointments fill quickly — book at least a week out for weekends.'
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: 'For standard color, balayage, or facials with Romy, book 2–3 weeks ahead. For color corrections, 4–6 weeks. For bridal services and trials, please inquire as early as possible — we typically book bridal trials 2–4 months ahead.'
+  },
+  {
+    q: 'How long is the Romy Color Journey?',
+    a: 'The signature Color Journey is approximately 3 hours and includes consultation, Olaplex treatment, custom color, gloss, head spa massage, and a finishing blowout with styling tutorial. From $375.'
+  },
+  {
+    q: 'What is your cancellation policy?',
+    a: 'We ask for 24 hours notice for cancellations or reschedules. Cancellations within 24 hours are subject to a 50% service charge. No-shows are charged 100%. Please call or text 571.682.8482 as soon as you know.'
+  },
+  {
+    q: 'Where is the salon and where do I park?',
+    a: 'We are at 3950 University Drive, Suite 211, Fairfax VA 22030 — in the heart of Old Town Fairfax. Free street parking is available along University Drive, and a public garage is one block north (Old Town Hall lot, first hour free).'
+  },
+  {
+    q: 'Do you offer gift cards?',
+    a: 'Yes — digital gift cards in any amount ($25 minimum) are available and never expire. They can be used for any service or retail product. Gift cards are emailed within minutes of purchase.'
+  },
+  {
+    q: '¿Hablan español?',
+    a: 'Sí — Romy y varias estilistas hablan español con fluidez. Llámanos al 571.407.5801 o envíanos un mensaje de texto al 571.682.8482 para reservar tu cita en español. Hacemos quinceañeras, novias, color, balayage y todo nuestro menú completo en español.'
+  },
+  {
+    q: 'Are you Olaplex certified? What products do you carry?',
+    a: 'Yes, we are an authorized Olaplex salon — bond-builder is included in every color service at no extra cost. We carry premium professional lines and can recommend take-home products to maintain your color between visits.'
+  },
+  {
+    q: 'Do you do bridal hair and makeup?',
+    a: 'Yes — bridal is one of our specialties. We offer a Bride package ($625) with trial plus day-of styling, a Bridal Party package for the bride plus 4 guests ($1,425), and on-location service within 30 miles of Fairfax ($1,850+). See our bridal page for details.'
+  },
+  {
+    q: 'How much should I tip?',
+    a: 'Tipping is appreciated but never expected. Industry standard is 18–22% of the service price. You can tip in cash or add it directly to the Mangomint receipt at checkout.'
+  },
+  {
+    q: 'What is a head spa massage and what does it cost?',
+    a: 'The head spa is a restorative scalp, neck, and shoulder treatment using aromatherapy, deep conditioning, and pressure-point release. Express (30 min) is $75, Signature (60 min) is $135, Luxury Ritual (90 min, includes foot soak and gua sha) is $210. You can also add it to any service for $45.'
+  },
+  {
+    q: 'Do you do hair extensions?',
+    a: 'Yes — we offer tape-in and hand-tied extensions, color-matched to your hair. Extensions start at $400 plus the cost of hair. Maintenance appointments every 6–8 weeks.'
+  },
+  {
+    q: 'Can I bring my own hair color or product?',
+    a: 'For your safety and our color guarantee, we only use professional product brought into the salon. If you have a product you love and want us to use it, mention it during your consultation and we will check whether it is compatible with our process.'
+  },
+  {
+    q: 'What is included in a facial?',
+    a: 'Every facial begins with skin analysis and is customized to your concerns. Our facials use Image Skincare and HydraFacial-style protocols. The Signature Facial ($269, 90 min) includes deep cleansing, exfoliation, extractions if needed, targeted mask, facial massage, and product layering. LED therapy and add-ons available.'
+  },
+  {
+    q: 'Do you have a loyalty program?',
+    a: 'We are launching the Romy Society — a quiet members-only program for repeat clients with quarterly perks, birthday treatments, and priority booking. Sign up via the newsletter on the home page.'
+  }
+];
+---
+<BaseLayout
+  title="FAQ | Romy Salon & Spa · Common Questions, Pricing, Policies"
+  description="Answers to common questions about Romy Salon & Spa in Old Town Fairfax: balayage pricing, color correction, bridal services, walk-ins, cancellation policy, parking, and more."
+>
+
+<div class="page-banner">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / FAQ</div>
+    <h1>Questions, <span class="italic">answered.</span></h1>
+    <p class="subtitle">Everything you might want to know before your first visit — pricing, policies, parking, and the details that make a salon feel less mysterious.</p>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="wrap">
+    <div class="faq-grid">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>{f.q}</summary>
+          <div class="ans">{f.a}</div>
+        </details>
+      ))}
+    </div>
+
+    <div class="cta-row">
+      <p>Still have a question?</p>
+      <a href="/contact" class="btn">Contact Us</a>
+      <a href="https://wa.me/15716828482" target="_blank" rel="noopener" class="btn ghost">Text Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQPage Schema for AEO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((f) => ({
+    '@type': 'Question',
+    'name': f.q,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+  }))
+})} />
+
+</BaseLayout>
+
+<style>
+  .faq-section{padding:80px 0;background:var(--bg)}
+  .faq-grid{max-width:840px;margin:0 auto}
+  .faq-item{
+    background:var(--paper);margin-bottom:14px;
+    box-shadow:0 1px 8px rgba(167,127,142,0.04);transition:box-shadow 0.2s;
+  }
+  .faq-item:hover{box-shadow:0 4px 18px rgba(167,127,142,0.1)}
+  .faq-item summary{
+    padding:24px 30px;cursor:pointer;list-style:none;
+    font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;
+    color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{
+    content:'+';color:var(--gold-deep);font-size:1.8rem;font-weight:300;line-height:1;
+    transition:transform 0.25s;flex-shrink:0;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .ans{
+    padding:0 30px 26px;color:var(--ink);font-size:15px;line-height:1.75;
+  }
+  .cta-row{
+    text-align:center;margin-top:60px;padding:48px;background:var(--bg-soft);
+    border-radius:0;
+  }
+  .cta-row p{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.4rem;color:var(--ink);margin-bottom:20px;
+  }
+  .cta-row .btn{margin:0 6px}
+</style>

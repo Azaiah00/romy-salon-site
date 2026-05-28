@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'fairfax-2026-color-trend-report',
+    title: 'The Fairfax 2026 Color Trend Report',
+    excerpt: "From mocha mousse to champagne platinum — what's walking into the chair this year in Northern Virginia, and what's quietly leaving. Insights from 200+ color appointments at Romy Salon.",
+    date: '2026-05-20',
+    readTime: '6 min read',
+    category: 'Color Trends',
+    img: '/blondes4.jpg'
+  },
+  {
+    slug: 'balayage-vs-highlights-vs-color-melt',
+    title: 'Balayage vs. Highlights vs. Color Melt: A Master Stylist Breaks It Down',
+    excerpt: "They all lighten your hair. They all cost about the same. So why pick one over the other? A 5-minute read that will save you a 3-hour appointment in the wrong chair.",
+    date: '2026-05-10',
+    readTime: '5 min read',
+    category: 'Education',
+    img: '/projectHair4.jpg'
+  },
+  {
+    slug: 'caring-for-blonde-in-northern-virginia-humidity',
+    title: 'Caring for Blonde Hair in Northern Virginia Humidity',
+    excerpt: 'Brassiness, frizz, and the dreaded "swimmer's green" — three things NoVA blondes battle from May through September. Here's what we recommend at Romy Salon.',
+    date: '2026-04-22',
+    readTime: '4 min read',
+    category: 'Care Guide',
+    img: '/blondes-platinum.jpg'
+  },
+];
+---
+<BaseLayout
+  title="The Journal | Romy Salon & Spa · Color Trends, Tutorials, Behind the Chair"
+  description="Color trends, education, and care guides from master stylist Romy. Featured: the Fairfax 2026 Color Trend Report, balayage vs highlights, blonde care in NoVA humidity."
+  ogImage="/blondes4.jpg"
+>
+
+<div class="page-banner">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / The Journal</div>
+    <h1>The <span class="italic">Journal</span></h1>
+    <p class="subtitle">Color theory, behind-the-chair stories, education, and the quiet rituals that make a great salon visit. Updated quarterly.</p>
+  </div>
+</div>
+
+<section class="journal-section">
+  <div class="wrap">
+    <div class="post-grid">
+      {posts.map((p) => (
+        <article class="post-card">
+          <a href={`/journal/${p.slug}`} class="post-img">
+            <img src={p.img} alt={p.title} loading="lazy" />
+            <span class="post-cat">{p.category}</span>
+          </a>
+          <div class="post-body">
+            <div class="post-meta">{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })} · {p.readTime}</div>
+            <h2><a href={`/journal/${p.slug}`}>{p.title}</a></h2>
+            <p>{p.excerpt}</p>
+            <a href={`/journal/${p.slug}`} class="post-link">Read article →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="signup-strip">
+      <h3>Get new posts in your inbox</h3>
+      <p>Quiet, quarterly notes from the salon. Never spam.</p>
+      <form class="signup-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Welcome'">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  'name': 'The Romy Salon Journal',
+  'description': 'Color trends, education, and care guides from Romy Salon & Spa in Old Town Fairfax, VA.',
+  'publisher': { '@type':'HairSalon', 'name':'Romy Salon & Spa', '@id':'https://romysalon.com/#business' },
+  'blogPost': posts.map(p => ({
+    '@type': 'BlogPosting',
+    'headline': p.title,
+    'description': p.excerpt,
+    'datePublished': p.date,
+    'image': p.img,
+    'url': `https://romysalon.com/journal/${p.slug}`,
+    'author': { '@type':'Person', 'name':'Romy', '@id':'https://romysalon.com/#romy' }
+  }))
+})} />
+
+</BaseLayout>
+
+<style>
+  .journal-section{padding:80px 0;background:var(--bg)}
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+  @media(max-width:900px){.post-grid{grid-template-columns:1fr}}
+  .post-card{background:var(--paper);overflow:hidden;box-shadow:0 2px 22px rgba(167,127,142,0.06);transition:transform 0.3s, box-shadow 0.3s}
+  .post-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(167,127,142,0.14)}
+  .post-img{display:block;position:relative;aspect-ratio:4/3;overflow:hidden}
+  .post-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+  .post-card:hover .post-img img{transform:scale(1.05)}
+  .post-cat{position:absolute;top:14px;left:14px;background:rgba(253,248,244,0.95);color:var(--ink);padding:5px 12px;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase}
+  .post-body{padding:28px 26px 30px}
+  .post-meta{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:12px}
+  .post-body h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;line-height:1.25;margin-bottom:12px}
+  .post-body h2 a{color:var(--ink);text-decoration:none}
+  .post-body h2 a:hover{color:var(--mauve-deep)}
+  .post-body p{color:var(--ink);font-size:14.5px;line-height:1.7;margin-bottom:14px}
+  .post-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:2px;text-decoration:none}
+
+  .signup-strip{
+    background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);
+    text-align:center;padding:60px 30px;margin-top:80px;
+  }
+  .signup-strip h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--ink);margin-bottom:8px}
+  .signup-strip p{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);margin-bottom:24px}
+  .signup-form{display:flex;max-width:460px;margin:0 auto}
+  .signup-form input{flex:1;padding:14px 18px;border:1px solid var(--ink);background:var(--paper);font-family:'Open Sans',sans-serif;font-size:14px;color:var(--ink);border-right:none}
+  .signup-form button{padding:14px 24px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer}
+  .signup-form button:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+</style>

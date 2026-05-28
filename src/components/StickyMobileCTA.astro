@@ -1,0 +1,70 @@
+---
+// Sticky mobile booking bar — appears on mobile (max-width: 900px) at the bottom
+// of every page. Houses Call · WhatsApp · Book Now buttons. Conversion lever.
+---
+<div class="sticky-mcta" aria-label="Quick actions">
+  <a href="tel:+15714075801" class="smcta-btn smcta-call" aria-label="Call Romy Salon">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.4-.1-.8 0-1.1.2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1.1C8.5 6.4 8.3 5.2 8.3 4c0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
+    </svg>
+    <span>Call</span>
+  </a>
+  <a href="https://wa.me/15716828482?text=Hi%20Romy%20Salon%2C%20I%27d%20like%20to%20ask%20about%20an%20appointment." target="_blank" rel="noopener" class="smcta-btn smcta-text" aria-label="Text or WhatsApp Romy Salon">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-1.2 4.4L21 22l-6.3-1.6a8.4 8.4 0 0 1-13.2-7c0-4.7 3.8-8.5 8.5-8.5S21 6.8 21 11.5z"/>
+    </svg>
+    <span>Text</span>
+  </a>
+  <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="smcta-btn smcta-book" aria-label="Book an appointment online">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v15c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 17H5V10h14v11zM5 8V6h14v2H5z"/>
+    </svg>
+    <span>Book Now</span>
+  </a>
+</div>
+
+<style>
+  .sticky-mcta{
+    display:none;
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:40;
+    background:rgba(253,248,244,0.98);
+    border-top:1px solid var(--line);
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+    box-shadow:0 -2px 18px rgba(167,127,142,0.1);
+    gap:8px;
+    justify-content:space-between;
+    align-items:stretch;
+  }
+  .smcta-btn{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    padding:10px 6px;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    border:1px solid var(--ink);
+    background:transparent;
+    color:var(--ink);
+    transition:all 0.2s;
+  }
+  .smcta-btn svg{display:block}
+  .smcta-call{}
+  .smcta-text{}
+  .smcta-book{background:var(--gold);border-color:var(--gold)}
+  .smcta-btn:active{transform:translateY(1px)}
+
+  @media(max-width:900px){
+    .sticky-mcta{display:flex}
+    /* Add bottom padding to body when sticky CTA is visible so content isn't hidden */
+    body{padding-bottom:80px}
+  }
+</style>

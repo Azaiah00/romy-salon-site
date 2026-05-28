@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const denominations = [
+  { amount: 50, blurb: 'A little something — a brow shape, a polish change, a quiet treat.' },
+  { amount: 100, blurb: 'Master cut + blowout for someone who deserves a real seat.' },
+  { amount: 200, blurb: 'A facial or a fresh color refresh — the kind of gift she remembers.' },
+  { amount: 350, blurb: 'A full transformation: cut, color, gloss, head spa, the works.' },
+  { amount: 625, blurb: 'The Bride Suite — trial + day-of styling for the most photographed day.' },
+];
+---
+<BaseLayout
+  title="Gift Cards | Romy Salon & Spa · Old Town Fairfax, VA"
+  description="Digital gift cards for Romy Salon & Spa in Old Town Fairfax. Delivered instantly via email. Never expire. Use toward any service — color, balayage, facial, head spa, bridal."
+  ogImage="/SPA.jpg"
+>
+
+<!-- HERO -->
+<section class="gift-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / Gift Cards</div>
+    <h1>The gift that <span class="italic">feels seen.</span></h1>
+    <p class="lede">Digital gift cards delivered to her inbox within minutes. Never expire. Redeemable for any service — color, balayage, facial, head spa, bridal trial, or retail.</p>
+  </div>
+</section>
+
+<!-- DENOMINATIONS -->
+<section class="denominations">
+  <div class="wrap">
+    <div class="section-eyebrow">Quick Amounts</div>
+    <h2 class="section-h">Choose a <span class="italic">denomination</span></h2>
+    <div class="ornament"></div>
+
+    <div class="amt-grid">
+      {denominations.map((d) => (
+        <a href={`https://booking.mangomint.com/romysalonandspa?giftcard=${d.amount}`} target="_blank" rel="noopener" class="amt-card">
+          <div class="amt-num">${d.amount}</div>
+          <p>{d.blurb}</p>
+          <span class="amt-cta">Send this →</span>
+        </a>
+      ))}
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="amt-card custom">
+        <div class="amt-num">$ <span class="italic">your choice</span></div>
+        <p>Choose any amount above $25. Add a personal note at checkout.</p>
+        <span class="amt-cta">Choose amount →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="wrap">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-h">Three quiet <span class="italic">steps</span></h2>
+    <div class="ornament"></div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">I.</div>
+        <h4>Choose your amount</h4>
+        <p>Pick a preset or enter a custom amount above $25.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">II.</div>
+        <h4>Personalize</h4>
+        <p>Add the recipient's name, your message, and the date you'd like it delivered.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">III.</div>
+        <h4>Delivered instantly</h4>
+        <p>She receives a beautiful digital card in her inbox. Redeemable in-salon or online for any service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT'S BETTER -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Why a Romy gift card</div>
+    <h2 class="section-h">Not a card. <span class="italic">A ritual.</span></h2>
+    <div class="ornament"></div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <h4>Never expires</h4>
+        <p>Use it next week or next year. It doesn't go anywhere.</p>
+      </div>
+      <div class="why-item">
+        <h4>Any service</h4>
+        <p>Color, cut, facial, nails, bridal, head spa — even retail products at the front desk.</p>
+      </div>
+      <div class="why-item">
+        <h4>Instant delivery</h4>
+        <p>Emailed within minutes. Or scheduled to arrive on her birthday morning.</p>
+      </div>
+      <div class="why-item">
+        <h4>A real experience</h4>
+        <p>Not a $50 store voucher. A three-hour ritual in a quiet studio in Old Town Fairfax.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>For Mother's Day, <span class="italic">birthdays,</span><br>or the friend who needs a quiet hour.</h2>
+    <p>Delivered to her inbox within minutes.</p>
+    <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Send a Gift Card</a>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .gift-hero{
+    background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);
+    padding:100px 0 80px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .gift-hero .breadcrumb{
+    font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.25em;text-transform:uppercase;
+    color:var(--gold-deep);margin-bottom:24px;
+  }
+  .gift-hero h1{
+    font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:400;
+    line-height:1.05;letter-spacing:-0.01em;color:var(--ink);max-width:780px;margin:0 auto 18px;
+  }
+  .gift-hero h1 .italic{font-style:italic}
+  .gift-hero .lede{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;
+    color:var(--ink);max-width:680px;margin:0 auto;
+  }
+  @media(max-width:900px){.gift-hero h1{font-size:2.6rem}}
+
+  .denominations{padding:100px 0;background:var(--bg)}
+  .amt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  @media(max-width:900px){.amt-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.amt-grid{grid-template-columns:1fr}}
+  .amt-card{
+    background:var(--paper);padding:38px 28px;text-align:center;
+    border:1px solid var(--line);text-decoration:none;color:var(--ink);
+    transition:all 0.3s ease;display:flex;flex-direction:column;
+    box-shadow:0 2px 18px rgba(167,127,142,0.06);
+  }
+  .amt-card:hover{
+    transform:translateY(-4px);border-color:var(--gold);
+    box-shadow:0 12px 32px rgba(214,185,129,0.18);
+  }
+  .amt-card.custom{background:linear-gradient(180deg, var(--paper) 0%, var(--rose-pale) 100%);border:2px dashed var(--gold)}
+  .amt-num{
+    font-family:'Cormorant Garamond',serif;font-size:3.4rem;color:var(--mauve);
+    font-style:italic;line-height:1;margin-bottom:14px;
+  }
+  .amt-card p{font-size:14.5px;color:var(--ink);line-height:1.55;margin-bottom:18px;flex:1}
+  .amt-cta{
+    font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:2px;align-self:center;
+  }
+
+  .how-section{background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);padding:100px 0}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+  @media(max-width:900px){.how-grid{grid-template-columns:1fr}}
+  .how-step{background:var(--paper);padding:36px 28px;text-align:center;box-shadow:0 2px 18px rgba(167,127,142,0.06)}
+  .how-num{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.4rem;
+    color:var(--gold);line-height:1;margin-bottom:14px;
+  }
+  .how-step h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:10px}
+  .how-step p{color:var(--ink);font-size:14.5px;line-height:1.65}
+
+  .why-section{background:var(--ink);color:var(--bg);padding:120px 0}
+  .why-section .section-eyebrow{color:var(--gold)}
+  .why-section .section-h{color:var(--bg)}
+  .why-section .ornament::after{background:var(--ink)}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px}
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
+  .why-item{border-left:2px solid var(--gold);padding-left:18px}
+  .why-item h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--bg);margin-bottom:8px}
+  .why-item p{color:var(--bg);opacity:0.8;font-size:14px;line-height:1.65}
+
+  .final-cta{
+    text-align:center;background:linear-gradient(135deg,var(--rose-pale) 0%,var(--bg-cream) 100%);
+    padding:100px 0;
+  }
+  .final-cta h2{
+    font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400;
+    margin-bottom:18px;color:var(--ink);line-height:1.2;
+  }
+  .final-cta h2 .italic{font-style:italic}
+  .final-cta p{
+    font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;
+    color:var(--ink);margin-bottom:36px;
+  }
+</style>

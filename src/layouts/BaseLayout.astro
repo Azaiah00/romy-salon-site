@@ -3,6 +3,7 @@ import '../styles/global.css';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 
 interface Props {
   title: string;
@@ -60,15 +61,19 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
     rel="stylesheet"
   />
 
-  <!-- LocalBusiness Schema.org structured data -->
+  <!-- Expanded LocalBusiness + Person + Service Schema for AEO/GEO citability -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'HairSalon',
+    '@type': ['HairSalon', 'BeautySalon', 'DaySpa'],
+    '@id': 'https://romysalon.com/#business',
     'name': 'Romy Salon & Spa',
-    'image': '/about-romy-left4.jpeg',
+    'alternateName': 'Romy Salon',
+    'description': "Old Town Fairfax's master-stylist-led luxury hair color, balayage, fantasy color, facial, nail design, head spa massage and bridal salon. By appointment with limited walk-ins.",
+    'image': ['/about-romy-left4.jpeg', '/about-romy-left.jpeg', '/SPA.jpg'],
+    'logo': '/logo5.png',
     'telephone': '+15714075801',
     'email': 'info@romysalon.com',
-    'url': 'https://romysalon.com',
+    'url': 'https://romy-salon-site.vercel.app',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': '3950 University Drive, Suite 211',
@@ -77,17 +82,46 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
       'postalCode': '22030',
       'addressCountry': 'US'
     },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 38.847302,
-      'longitude': -77.305151
-    },
+    'geo': {'@type':'GeoCoordinates','latitude':38.847302,'longitude':-77.305151},
+    'hasMap': 'https://maps.google.com/?q=3950+University+Drive+Fairfax+VA+22030',
+    'areaServed': [
+      {'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},
+      {'@type':'City','name':'Fairfax Station'},{'@type':'City','name':'Burke'},{'@type':'City','name':'Centreville'},
+      {'@type':'City','name':'Reston'},{'@type':'City','name':'Arlington'},
+      {'@type':'AdministrativeArea','name':'Northern Virginia'}
+    ],
     'openingHoursSpecification': [
       {'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday'],'opens':'10:00','closes':'19:00'},
       {'@type':'OpeningHoursSpecification','dayOfWeek':['Friday','Saturday'],'opens':'09:00','closes':'19:00'},
       {'@type':'OpeningHoursSpecification','dayOfWeek':'Sunday','opens':'12:00','closes':'17:00'}
     ],
     'priceRange': '$$$',
+    'paymentAccepted': 'Cash, Credit Card, Debit Card, Apple Pay, Google Pay',
+    'currenciesAccepted': 'USD',
+    'foundingDate': '2025',
+    'founder': {
+      '@type': 'Person',
+      '@id': 'https://romysalon.com/#romy',
+      'name': 'Romy',
+      'jobTitle': 'Master Stylist & Color Theorist',
+      'description': 'Master Stylist with 15+ years of experience specializing in custom color, balayage, fantasy color, silver/platinum tones, and color correction.',
+      'image': '/about-romy-left.jpeg',
+      'sameAs': ['https://www.instagram.com/romy_salonandspa/','https://www.tiktok.com/@romysalonandspa']
+    },
+    'aggregateRating': {'@type':'AggregateRating','ratingValue':'5.0','reviewCount':'44','bestRating':'5'},
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': 'Salon & Spa Services',
+      'itemListElement': [
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Custom Color & Balayage','description':'Hand-painted custom color, balayage, fantasy shades. Olaplex bond-builder included.'},'price':'185','priceCurrency':'USD'},
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Color Correction','description':'Multi-step color correction by master stylist. Consultation required.'},'price':'350','priceCurrency':'USD'},
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Master Haircut & Style','description':'Precision cut with consultation, shampoo, and finishing blowout.'},'price':'95','priceCurrency':'USD'},
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Signature Facial','description':'Customized 90-minute facial with extractions, mask, and LED therapy.'},'price':'269','priceCurrency':'USD'},
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Head Spa Massage','description':'Restorative scalp, neck, and shoulder treatment with aromatherapy.'},'price':'135','priceCurrency':'USD'},
+        {'@type':'Offer','itemOffered':{'@type':'Service','name':'Bridal Hair & Makeup','description':'Bride trial plus day-of styling. Bridal party and on-location available.'},'price':'625','priceCurrency':'USD'}
+      ]
+    },
+    'knowsAbout': ['Balayage','Hair Color','Color Correction','Fantasy Color','Silver Hair','Platinum Blonde','Bridal Hair','Quinceañera Makeup','Olaplex','HydraFacial','Head Spa Massage','Lash Extensions','Gel-X Nails','Swarovski Crystal Nail Art'],
     'sameAs': [
       'https://www.instagram.com/romy_salonandspa/',
       'https://www.facebook.com/Romyhairandmakeup/',
@@ -103,5 +137,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
     <slot />
   </main>
   <Footer />
+  <StickyMobileCTA />
 </body>
 </html>
