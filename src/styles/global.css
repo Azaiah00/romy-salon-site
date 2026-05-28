@@ -72,8 +72,37 @@ header.site .brand .small{
   font-family:'Montserrat',sans-serif;font-weight:600;color:var(--gold-deep);margin-top:2px;
 }
 header.site .nav-cta{display:flex;justify-content:flex-end;align-items:center;gap:16px}
+
 @media(max-width:900px){
-  header.site nav.primary{display:none}
+  /* mobile: nav transforms into a slide-down full panel triggered by the hamburger */
+  header.site nav.primary{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:var(--bg);
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    gap:0;
+    padding:120px 28px 40px;
+    transform:translateX(100%);
+    transition:transform 0.32s ease;
+    z-index:45;
+    overflow-y:auto;
+  }
+  header.site nav.primary.open{transform:translateX(0)}
+  header.site nav.primary a{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    width:100%;
+    text-align:center;
+    font-size:14px;
+    letter-spacing:0.22em;
+  }
+  header.site nav.primary a::after{display:none}
+  header.site nav.primary a.active{color:var(--gold-deep)}
 }
 
 /* BUTTONS */

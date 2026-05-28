@@ -13,21 +13,50 @@ const LOGO_URL = '/logo5.png';
   <div class="wrap">
     <div class="nav-row">
       <a href="/" class="brand-link" aria-label="Romy Salon & Spa — Home">
-        <img src={LOGO_URL} alt="Romy Salon & Spa" class="brand-logo" width="220" height="64" />
+        <img src={LOGO_URL} alt="Romy Salon & Spa" class="brand-logo" width="260" height="84" />
       </a>
-      <nav class="primary">
+      <nav class="primary" id="primary-nav">
         <a href="/" class={isActive('home')}>Home</a>
         <a href="/about" class={isActive('about')}>The Studio</a>
         <a href="/services" class={isActive('services')}>Services</a>
         <a href="/bridal" class={isActive('bridal')}>Bridal</a>
         <a href="/contact" class={isActive('contact')}>Visit</a>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="mobile-book">Book Now</a>
       </nav>
       <div class="nav-cta">
-        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn">Book Now</a>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn desktop-book">Book Now</a>
+        <button class="hamburger" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false" id="hamburger-btn" type="button">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('primary-nav');
+    if (!btn || !nav) return;
+    const close = () => {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    btn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    // close on Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) close();
+    });
+  })();
+</script>
 
 <style>
   .brand-link{
@@ -35,16 +64,65 @@ const LOGO_URL = '/logo5.png';
     align-items:center;
     justify-content:flex-start;
     text-decoration:none;
+    z-index:55;
   }
   .brand-logo{
-    height:56px;
+    height:120px;
     width:auto;
-    max-width:240px;
+    max-width:360px;
     object-fit:contain;
     transition:opacity 0.2s;
   }
   .brand-link:hover .brand-logo{opacity:0.85}
+
+  /* HAMBURGER BUTTON */
+  .hamburger{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    width:36px;
+    height:36px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    z-index:60;
+    position:relative;
+  }
+  .hamburger span{
+    display:block;
+    width:26px;
+    height:2px;
+    background:var(--ink);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+    border-radius:1px;
+  }
+  .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+  .mobile-book{display:none}
+
   @media(max-width:900px){
-    .brand-logo{height:42px;max-width:180px}
+    .brand-logo{height:64px;max-width:220px}
+    .hamburger{display:flex}
+    .desktop-book{display:none}
+    .mobile-book{
+      display:block;
+      margin-top:24px;
+      padding:16px 32px;
+      background:var(--gold);
+      color:var(--ink);
+      font-family:'Montserrat',sans-serif;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      text-align:center;
+      border:1px solid var(--gold);
+      align-self:center;
+    }
   }
 </style>
