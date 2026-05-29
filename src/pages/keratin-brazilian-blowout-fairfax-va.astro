@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+const faqs = [
+  { q: 'How much does a keratin or Brazilian blowout cost in Fairfax VA?', a: 'At Romy Salon, a Keratin Smoothing Treatment starts at $295 and a Brazilian Blowout starts at $345. Final pricing depends on hair length and density. Both treatments include a finishing blowout and styling tutorial. Maintenance gloss between treatments is $65.' },
+  { q: 'How long does the treatment last?', a: 'Both keratin and Brazilian blowouts last 3–5 months depending on how often you wash, your hair texture, and your home care routine. Sulfate-free shampoo extends the result significantly. Most clients re-treat every 4 months.' },
+  { q: 'Are these treatments safe? What about formaldehyde?', a: 'We only use formaldehyde-free formulas — both the keratin smoothing line and the Brazilian Blowout brand we carry are certified formaldehyde-free. You can be in the salon during the service without any chemical smell or eye/respiratory irritation. We will not perform any treatment that compromises your safety or ours.' },
+  { q: 'What is the difference between a keratin treatment and a Brazilian blowout?', a: 'Keratin smoothing is gentler — it removes about 60% of frizz and adds shine while keeping your natural texture (curls become looser waves). Brazilian Blowout is stronger — it removes 80–90% of frizz and your hair becomes nearly straight while still having movement. Brazilian Blowout has no downtime; keratin requires not washing for 72 hours.' },
+  { q: 'Can I get a smoothing treatment with colored hair?', a: 'Yes — and actually, getting your color done before a smoothing treatment helps the color last longer. We typically do color, then wait 1–2 weeks for the color to settle, then do the smoothing treatment. The smoothing process can fade fresh color, so timing matters.' },
+  { q: 'How long does the appointment take?', a: 'Keratin smoothing is 2–3 hours. Brazilian Blowout is 90 minutes. Both include a deep cleanse, the treatment application, processing, sealing with heat, and a finishing blowout. The Brazilian Blowout is faster because there is no waiting period before washing.' }
+];
+---
+<BaseLayout
+  title="Keratin & Brazilian Blowout in Fairfax VA | Formaldehyde-Free · Romy Salon"
+  description="Keratin smoothing and Brazilian blowout in Old Town Fairfax — formaldehyde-free formulas. Keratin from $295, Brazilian Blowout from $345. 3–5 month results. Safe for colored hair."
+  ogImage="/projectHair3.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / Keratin &amp; Brazilian Blowout</div>
+    <h1>Keratin smoothing &amp; Brazilian Blowout. <span class="italic">Formaldehyde-free.</span></h1>
+    <p class="lede">Three to five months of less frizz, more shine, smoother styling — without the harsh chemicals. Keratin from $295. Brazilian Blowout from $345.</p>
+    <div class="cta-row">
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Your Smoothing Treatment</a>
+      <a href="#pricing" class="btn lg ghost">See Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Quick Answer</div>
+      <p><strong>Keratin smoothing at Romy Salon in Fairfax VA starts at $295. Brazilian Blowout starts at $345.</strong> Both formulas are certified formaldehyde-free. Results last 3–5 months depending on home care. Keratin keeps natural texture but removes ~60% of frizz; Brazilian Blowout removes 80–90% of frizz and gets hair nearly straight while keeping movement. Both are safe on colored hair (best done 1–2 weeks after a color appointment).</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">What makes our smoothing different</div>
+    <h2 class="section-h">Smoother. <span class="italic">Safer.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>Formaldehyde-free, always</h4><p>We only carry formaldehyde-free formulas. No chemical smell. No eye watering. No respiratory irritation. Safe for our team and safe for you.</p></div>
+      <div class="item"><h4>Tested on real hair types</h4><p>We have done smoothing treatments on every texture from fine straight to coily 4C. We tell you up front what your specific hair will look like after — no surprises.</p></div>
+      <div class="item"><h4>Timed with your color</h4><p>If you also color your hair, we time the treatment 1–2 weeks after color to protect both investments. You leave with a written maintenance plan for the year.</p></div>
+      <div class="item"><h4>Honest about who shouldn't do it</h4><p>If your hair is too damaged or you have the wrong texture for the result you want, we will refuse the service. The consultation is free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h">Smoothing <span class="italic">menu.</span></h2>
+    <div class="ornament"></div>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">Keratin Smoothing Treatment<span class="pdesc">Reduces frizz ~60%, keeps natural texture, adds shine. 3–5 month result.</span></div><div class="pprice">From $295</div></div>
+      <div class="prow"><div class="pname">Brazilian Blowout<span class="pdesc">Reduces frizz 80–90%, near-straight result with movement. No downtime.</span></div><div class="pprice">From $345</div></div>
+      <div class="prow"><div class="pname">Smoothing for Long Hair (24"+)<span class="pdesc">Adds time and product. Final quote in consultation.</span></div><div class="pprice">+$50–100</div></div>
+      <div class="prow"><div class="pname">Smoothing + Cut Combo<span class="pdesc">Add a master cut to your smoothing appointment.</span></div><div class="pprice">+$75</div></div>
+      <div class="prow"><div class="pname">Maintenance Gloss<span class="pdesc">6–8 week refresh between full treatments.</span></div><div class="pprice">$65</div></div>
+    </div>
+    <p class="lp-price-foot">Best for: thick, coarse, or curly hair · daily heat-styling damage · busy schedules · pre-wedding prep · color-treated frizz</p>
+  </div>
+</section>
+
+<section class="lp-compare">
+  <div class="wrap">
+    <div class="section-eyebrow">Which is right for you?</div>
+    <h2 class="section-h">Keratin vs. <span class="italic">Brazilian Blowout.</span></h2>
+    <div class="ornament"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Keratin Smoothing</th><th>Brazilian Blowout</th></tr></thead>
+        <tbody>
+          <tr><td>Frizz reduction</td><td>~60%</td><td>80–90%</td></tr>
+          <tr><td>Effect on curls</td><td>Loosens curl to wave</td><td>Removes most curl</td></tr>
+          <tr><td>Movement after</td><td>Natural with less frizz</td><td>Sleeker, polished</td></tr>
+          <tr><td>Time in chair</td><td>2–3 hours</td><td>90 min</td></tr>
+          <tr><td>Downtime</td><td>72 hours (no wash, no ponytail)</td><td>None — wash same day</td></tr>
+          <tr><td>How long it lasts</td><td>3–5 months</td><td>3–4 months</td></tr>
+          <tr><td>Best for</td><td>Coily hair, gentle smoothing</td><td>Wavy/curly, full transformation</td></tr>
+          <tr><td>Starting price</td><td>$295</td><td>$345</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="lp-expect">
+  <div class="wrap">
+    <div class="section-eyebrow">What to expect</div>
+    <h2 class="section-h">From walk-in to <span class="italic">silk.</span></h2>
+    <div class="ornament"></div>
+    <div class="steps">
+      <div class="step"><span class="n">I.</span><div><h4>Consultation</h4><p>10 minutes. Hair history, texture, goals. Pick keratin or Brazilian Blowout based on result you want.</p></div></div>
+      <div class="step"><span class="n">II.</span><div><h4>Clarifying wash</h4><p>Removes buildup so the treatment penetrates evenly. The most important step most salons skip.</p></div></div>
+      <div class="step"><span class="n">III.</span><div><h4>Application</h4><p>Brushed onto each section. Processed for the recommended time. No smell.</p></div></div>
+      <div class="step"><span class="n">IV.</span><div><h4>Heat seal</h4><p>Flat-iron seals the keratin into the cuticle. This is where the magic happens.</p></div></div>
+      <div class="step"><span class="n">V.</span><div><h4>Style + tutorial</h4><p>Smooth blowout and styling tips so you know how to maintain the result at home.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Areas served</div>
+    <h2 class="section-h">Smoother hair for <span class="italic">all of NoVA.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">Especially valuable in the humid months — May through September in Northern Virginia is when smoothing treatments earn their keep.</p>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>Annandale</div><div>McLean</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Common questions</div>
+    <h2 class="section-h">Before your <span class="italic">appointment.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>Less frizz. More shine. <span class="italic">Three months back.</span></h2>
+    <p>Same-week appointments often available.</p>
+    <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Online</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or 571.407.5801</a>
+    <div class="updated">Page last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Keratin Smoothing & Brazilian Blowout in Fairfax VA',
+  'description':'Formaldehyde-free keratin smoothing and Brazilian Blowout treatments in Old Town Fairfax. 3–5 month results. Safe for colored hair.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'offers':[
+    {'@type':'Offer','name':'Keratin Smoothing Treatment','price':'295','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Brazilian Blowout','price':'345','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Maintenance Gloss','price':'65','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+</BaseLayout>

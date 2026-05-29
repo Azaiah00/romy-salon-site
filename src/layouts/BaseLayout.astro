@@ -27,6 +27,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Flag JS early so scroll-reveal hidden states only apply when JS can un-hide them (no FOUC, graceful no-JS fallback) -->
+  <script is:inline>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
@@ -138,5 +140,55 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
   </main>
   <Footer />
   <StickyMobileCTA />
+
+  <!-- Scroll reveal: gentle fade + rise as content scrolls into view -->
+  <script is:inline>
+    (() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Section-level building blocks tagged across the whole site.
+      const SELECTORS = [
+        '.section-eyebrow', '.section-h', '.section-sub', '.ornament',
+        '.services-grid', '.master-photo', '.master-content',
+        '.ritual-stages', '.ritual-cta',
+        '.transform-grid', '.transform-disclaimer', '.transform-cta',
+        '.lookbook-grid', '.lookbook-cta', '.video-grid',
+        '.reviews-grid', '.bridal-content', '.bridal-photo',
+        '.location-content', '.location-photo',
+        '.news-form', '.ig-grid',
+        '.reveal'
+      ];
+      const nodes = new Set();
+      SELECTORS.forEach((sel) => document.querySelectorAll(sel).forEach((n) => nodes.add(n)));
+
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const toObserve = [];
+      nodes.forEach((el) => {
+        el.classList.add('reveal');
+        // Anything already in view on load: show immediately (protects LCP / above-the-fold).
+        const top = el.getBoundingClientRect().top;
+        if (reduce || top < vh * 0.92) {
+          el.classList.add('in');
+        } else {
+          toObserve.push(el);
+        }
+      });
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        toObserve.forEach((el) => el.classList.add('in'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+      toObserve.forEach((el) => io.observe(el));
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/journal-post.css';
+
+const post = {
+  title: 'Caring for Blonde Hair in Northern Virginia Humidity',
+  subtitle: `Brassiness, frizz, and the dreaded "swimmer's green" — what NoVA blondes battle from May through September, and how to win.`,
+  date: '2026-04-22',
+  readTime: '4 min read',
+  category: 'Care Guide',
+  author: 'Romy',
+  heroImg: '/blondes-platinum.jpg',
+};
+---
+<BaseLayout
+  title={`${post.title} | The Romy Salon Journal`}
+  description="NoVA humidity is brutal on blonde hair. A master colorist in Fairfax VA breaks down brassiness, frizz, and swimmer's green — what causes them and the products and habits that actually work."
+  ogImage={post.heroImg}
+>
+
+<article class="post-page">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Home</a> / <a href="/journal">The Journal</a> / Care Guide</div>
+      <div class="post-cat">{post.category}</div>
+      <h1>{post.title}</h1>
+      <p class="post-sub">{post.subtitle}</p>
+      <div class="post-meta">
+        <span>By <a href="/team">{post.author}</a></span>
+        <span>{new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</span>
+        <span>{post.readTime}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-hero-image">
+    <img src={post.heroImg} alt="Platinum blonde balayage by Romy Salon — caring for blonde hair in NoVA humidity" />
+  </div>
+
+  <div class="post-body">
+    <div class="wrap-narrow">
+
+      <p class="lede-p">Every year around the third week of May, the calls start. "My hair turned green at the pool yesterday." "My blonde looks orange in this lighting." "Why does my hair frizz the second I leave the house?" Welcome to summer in Northern Virginia, where the humidity is real, the chlorine is real, and your blonde is paying the price. Here's how to fight back.</p>
+
+      <h2>The three enemies</h2>
+
+      <p>NoVA blondes deal with three specific problems from May through September. Each one has a different cause and a different solution.</p>
+
+      <h3>Enemy 1 — Brassiness</h3>
+
+      <p>You walked out of the salon with cool, expensive-looking blonde. Three weeks later, your hair has a yellow-orange cast that you swear was not there before. This is brassiness, and it's caused by oxidation: blonde hair has had its underlying warm pigments exposed, and water, sun, and even air slowly bring those warm tones to the surface.</p>
+
+      <div class="callout-card">
+        <strong>The fix:</strong> A purple shampoo used 1–2 times per week (not every wash — it dries the hair). Look for one with violet-blue pigment specifically. Avoid drugstore versions with red dye instead of true violet. Our pick: Olaplex No. 4P or Davines Alchemic Silver. Use sparingly — leave on for 3 minutes max, not the 10 minutes some bloggers recommend (you will end up gray-purple).
+      </div>
+
+      <h3>Enemy 2 — Frizz and swelling</h3>
+
+      <p>Northern Virginia humidity routinely hits 75–85% in July and August. When the air is that wet, your hair tries to absorb the moisture — which causes the cortex to swell and the cuticle to lift. The result is frizz, lost curl pattern, and the dreaded "halo" of flyaways.</p>
+
+      <p>Blonde hair is especially vulnerable because the lifting process leaves the cuticle slightly more porous than virgin hair. The fix isn't a heavier serum (those weigh hair down and make blondes look greasy). The fix is sealing the cuticle.</p>
+
+      <div class="callout-card">
+        <strong>The fix:</strong> A weekly keratin or bond-builder treatment at home (Olaplex No. 3, K18, or a salon-grade keratin mask). For acute frizz days, a lightweight oil applied to ends only (not roots) — argan or marula. Heatless overnight styling (silk scrunchies, French braids) cuts frizz at the source because you skip the morning heat tool that opens the cuticle further.
+      </div>
+
+      <h3>Enemy 3 — Pool green</h3>
+
+      <p>The classic. You spent a day at the pool and your blonde has a subtle green-gray tinge. This is copper deposit — pool water contains copper from algaecides and old pipes, and that copper oxidizes when it meets your hair (especially porous blonde hair). The greener your hair gets, the more copper is sitting on it.</p>
+
+      <div class="callout-card">
+        <strong>The fix:</strong> Prevention first — wet your hair with clean water and apply a leave-in conditioner BEFORE you get in the pool. Saturated hair won't absorb pool water. After swimming, rinse immediately with clean water and use a chelating shampoo (Malibu C, Ouidad Water Works, or Goldwell Dualsenses Blondes &amp; Highlights). For green that's already happened, the chelating shampoo + a 10-minute clarifying mask usually reverses it.
+      </div>
+
+      <h2>The summer routine I tell clients to follow</h2>
+
+      <p>Three changes from your usual routine, kept up from May through September:</p>
+
+      <ol>
+        <li><strong>Wash less.</strong> Cut from 4–5 washes per week down to 2–3. The natural oils help protect the cuticle from humidity damage.</li>
+        <li><strong>Use a leave-in before sun and chlorine exposure.</strong> Saturated hair doesn't absorb damage as easily. Even a quick spritz of water + leave-in before going outside makes a measurable difference.</li>
+        <li><strong>Bond-builder once a week.</strong> Olaplex No. 3 or K18 — leave on for the full recommended time. This is the single highest-impact thing you can do for color-treated blonde all summer.</li>
+      </ol>
+
+      <h2>Salon services that help</h2>
+
+      <p>Two services we offer at Romy Salon specifically address summer blonde damage:</p>
+
+      <ul>
+        <li><strong>Stand-alone Olaplex treatment ($45)</strong> — a 45-minute bond-rebuilding service without color. Most clients book one mid-summer just to reset.</li>
+        <li><strong>Toning gloss ($65)</strong> — a 30–45 minute service that refreshes tone (kills brassiness) without lifting. Best done every 6–8 weeks between full color appointments.</li>
+      </ul>
+
+      <p>And of course, the Head Spa Massage ($75 express, $135 signature) — a scalp treatment that includes deep conditioning. The hair leaves shinier than you've seen it since spring.</p>
+
+      <h2>What to avoid</h2>
+
+      <ul>
+        <li><strong>Hard water at home.</strong> If your shower has visible mineral deposits, install a shower filter ($20–60 on Amazon). Hard water minerals build up on blonde hair faster than you'd think.</li>
+        <li><strong>Drugstore shampoos with sulfates.</strong> Sulfates strip color faster in summer than winter. A sulfate-free shampoo is worth it from May through September.</li>
+        <li><strong>Skipping the rinse after a workout.</strong> Sweat is salty and your scalp expands when hot — both accelerate fading. Rinse with clean water (no shampoo) after every workout if you can.</li>
+        <li><strong>Long sun exposure without a hat.</strong> UV bleaches color and oxidizes pigment. A hat is not optional for fresh blondes in June.</li>
+      </ul>
+
+      <div class="cta-card">
+        <h3>Need a summer reset?</h3>
+        <p>Book a toning gloss or stand-alone Olaplex treatment to undo a hard month.</p>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Online</a>
+        <a href="/balayage-fairfax-va" class="btn lg ghost">Balayage Pricing</a>
+      </div>
+
+      <div class="post-foot">
+        <p><strong>About the author.</strong> Romy is the founder and master stylist at Romy Salon &amp; Spa in Old Town Fairfax. She specializes in custom color, balayage, color correction, and blonde maintenance. <a href="/team">Read her full bio</a>.</p>
+        <p class="updated">Last updated: {new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="wrap">
+      <div class="section-eyebrow">More from the Journal</div>
+      <h2 class="section-h">Keep <span class="italic">reading.</span></h2>
+      <div class="ornament"></div>
+      <div class="related-grid">
+        <a href="/journal/fairfax-2026-color-trend-report" class="related-card">
+          <h4>The Fairfax 2026 Color Trend Report</h4>
+          <p>What walked into the chair this year, what quietly left, and 3 predictions for the second half.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/journal/balayage-vs-highlights-vs-color-melt" class="related-card">
+          <h4>Balayage vs. Highlights vs. Color Melt</h4>
+          <p>A master stylist breaks down which lightening technique is right for you, and why salons don't explain the difference.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/balayage-fairfax-va" class="related-card">
+          <h4>Balayage in Fairfax VA — Full Guide</h4>
+          <p>Pricing, what to expect, comparison to highlights, and what makes our balayage different.</p>
+          <span class="related-link">Read guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  'headline': post.title,
+  'description': post.subtitle,
+  'image': post.heroImg,
+  'datePublished': post.date,
+  'dateModified': post.date,
+  'author': { '@type':'Person', '@id':'https://romysalon.com/#romy', 'name':'Romy' },
+  'publisher': { '@type':'HairSalon', '@id':'https://romysalon.com/#business', 'name':'Romy Salon & Spa' },
+  'mainEntityOfPage': 'https://romy-salon-site.vercel.app/journal/caring-for-blonde-hair-in-northern-virginia-humidity',
+  'keywords': 'blonde hair care, brassiness, summer hair care, Northern Virginia humidity, swimmer green, NoVA blonde maintenance'
+})} />
+
+</BaseLayout>

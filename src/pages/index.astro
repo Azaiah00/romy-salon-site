@@ -1,5 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+
+// Before/after transformations. The "after" images are real client results
+// hosted locally in /public. The "before" images are AI-simulated from the same
+// shot purely to illustrate the starting point — labeled as such for honesty.
+// To harden for production, download each `before` URL into /public and swap the
+// path (see the note at the bottom of this file).
+const transformations = [
+  {
+    before: 'https://d8j0ntlcm91z4.cloudfront.net/user_3AKOARGKGNgk3YWyVLO4xafDr8w/hf_20260529_132041_96fba228-84d4-4ff0-a113-0c782605851f.png',
+    after: '/blondes-platinum.jpg',
+    alt: 'Dark grown-out hair to icy platinum-silver balayage',
+    label: 'Platinum & Silver Balayage',
+  },
+  {
+    before: 'https://d8j0ntlcm91z4.cloudfront.net/user_3AKOARGKGNgk3YWyVLO4xafDr8w/hf_20260529_132045_c6f2680e-880c-44fe-8f17-5c33a13e5374.png',
+    after: '/balayage-blonde.jpg',
+    alt: 'Flat brown hair to dimensional sun-kissed balayage',
+    label: 'Dimensional Balayage',
+  },
+  {
+    before: 'https://d8j0ntlcm91z4.cloudfront.net/user_3AKOARGKGNgk3YWyVLO4xafDr8w/hf_20260529_132049_30f1b639-9f64-463a-924f-e6c7aa35cafe.png',
+    after: '/color-vivid-red.jpg',
+    alt: 'Dull natural brown to vivid copper-red',
+    label: 'Vivid Copper-Red',
+  },
+];
 
 const services = [
   { name: 'Custom Color & Balayage', price: 'From $185', img: '/blondes4.jpg', desc: "From sun-kissed dimensional balayage to fantasy silver and platinum tones — color crafted from theory, not from a box." },
@@ -27,6 +54,23 @@ const looks = [
   { src: '/ProjectHair.jpeg', cls: '', alt: 'Dimensional highlights' },
   { src: '/color-vivid-red.jpg', cls: '', alt: 'Vivid red color' },
   { src: '/unias3.webp', cls: '', alt: 'Pink ombre nail design' },
+  { src: '/blondes-platinum.jpg', cls: 'tall', alt: 'Icy platinum and silver balayage' },
+  { src: '/balayage-blonde.jpg', cls: '', alt: 'Dimensional sun-kissed balayage' },
+  { src: '/transformation-copper.jpg', cls: '', alt: 'Copper color transformation' },
+  { src: '/transformation-red.jpg', cls: 'wide', alt: 'Vivid red fashion color' },
+  { src: '/updo.jpg', cls: '', alt: 'Elegant bridal updo' },
+  { src: '/updo5.jpg', cls: '', alt: 'Special-event updo styling' },
+  { src: '/nails-gold.jpg', cls: '', alt: 'Gold accent nail art' },
+  { src: '/unias7.jpg', cls: '', alt: 'Crystal nail design' },
+  { src: '/unias4.jpg', cls: '', alt: 'Luxury nail detail' },
+  { src: '/nails-pink-ombre2.webp', cls: '', alt: 'Pink ombre nail design' },
+];
+
+const studioShots = [
+  { src: '/SPA.jpg', label: 'The Spa Suite', sub: 'HydraFacial & glow rituals' },
+  { src: '/massage.jpg', label: 'The Head Spa Ritual', sub: 'Scalp massage & aromatherapy' },
+  { src: '/about-romy-left.jpeg', label: 'At the Chair', sub: 'Color crafted by Romy' },
+  { src: '/updo5.jpg', label: 'Finishing & Styling', sub: 'The reveal, every time' },
 ];
 
 const igTiles = [
@@ -152,6 +196,31 @@ const igTiles = [
   </div>
 </section>
 
+<!-- TRANSFORMATIONS -->
+<section class="transform-section" id="transformations">
+  <div class="wrap">
+    <div class="section-eyebrow">Drag to Reveal</div>
+    <h2 class="section-h">Before &amp; <span class="italic">after</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">The work that other stylists send their clients to. Drag the handle on each to see the transformation — from grown-out and dull to color crafted from theory.</p>
+
+    <div class="transform-grid">
+      {transformations.map((t) => (
+        <div class="transform-card reveal">
+          <BeforeAfter before={t.before} after={t.after} alt={t.alt} />
+          <div class="transform-label">{t.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <p class="transform-disclaimer">Results vary by hair history. “Before” states shown are digitally simulated for illustration; finished results are real Romy Salon clients.</p>
+
+    <div class="transform-cta">
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Your Transformation</a>
+    </div>
+  </div>
+</section>
+
 <!-- LOOKBOOK -->
 <section class="lookbook-section" id="lookbook">
   <div class="wrap">
@@ -188,11 +257,18 @@ const igTiles = [
           <source src="/videosalon.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-frame vertical">
-        <video autoplay muted loop playsinline poster="/fantasy2.jpeg">
-          <source src="/videomobile.mp4" type="video/mp4" />
-        </video>
-      </div>
+    </div>
+
+    <div class="studio-strip">
+      {studioShots.map((s) => (
+        <figure class="studio-shot reveal">
+          <img src={s.src} alt={s.label} loading="lazy" />
+          <figcaption>
+            <span class="s-label">{s.label}</span>
+            <span class="s-sub">{s.sub}</span>
+          </figcaption>
+        </figure>
+      ))}
     </div>
   </div>
 </section>
@@ -467,6 +543,22 @@ const igTiles = [
   .look.big{grid-row:span 2;grid-column:span 2}
   .lookbook-cta{text-align:center}
 
+  /* TRANSFORMATIONS */
+  .transform-section{background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-cream) 100%)}
+  .transform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:10px}
+  @media(max-width:900px){.transform-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+  .transform-card{background:var(--paper);padding:14px 14px 0;box-shadow:0 2px 24px rgba(167,127,142,0.06)}
+  .transform-label{
+    font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;
+    color:var(--ink);text-align:center;padding:18px 10px 22px;
+  }
+  .transform-disclaimer{
+    text-align:center;max-width:640px;margin:30px auto 0;
+    font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.04em;
+    color:var(--ink);opacity:0.55;line-height:1.6;
+  }
+  .transform-cta{text-align:center;margin-top:36px}
+
   /* VIDEO SHOWCASE */
   .video-section{
     background:var(--ink);padding:140px 0;position:relative;overflow:hidden;
@@ -482,9 +574,9 @@ const igTiles = [
   .video-section .section-sub{color:var(--bg);opacity:0.8}
   .video-section .ornament::after{background:var(--ink)}
   .video-grid{
-    display:grid;grid-template-columns:7fr 4fr;gap:24px;margin-top:20px;
+    display:grid;grid-template-columns:1fr;gap:24px;margin-top:20px;
+    max-width:920px;margin-left:auto;margin-right:auto;
   }
-  @media(max-width:900px){.video-grid{grid-template-columns:1fr}}
   .video-frame{
     overflow:hidden;position:relative;
     box-shadow:0 8px 40px rgba(0,0,0,0.3);
@@ -495,6 +587,31 @@ const igTiles = [
   .video-frame:first-child{aspect-ratio:16/9}
   .video-frame.vertical{aspect-ratio:9/16;max-height:500px}
   @media(max-width:900px){.video-frame.vertical{max-height:400px}}
+
+  /* STUDIO ATMOSPHERE STRIP */
+  .studio-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;
+  }
+  @media(max-width:900px){.studio-strip{grid-template-columns:repeat(2,1fr)}}
+  .studio-shot{position:relative;margin:0;overflow:hidden;aspect-ratio:4/5}
+  .studio-shot img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform 0.6s ease;
+  }
+  .studio-shot:hover img{transform:scale(1.06)}
+  .studio-shot figcaption{
+    position:absolute;inset:auto 0 0 0;z-index:2;
+    padding:38px 18px 16px;display:flex;flex-direction:column;gap:2px;
+    background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.62) 100%);
+  }
+  .studio-shot .s-label{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.2rem;color:var(--bg);line-height:1.2;
+  }
+  .studio-shot .s-sub{
+    font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);
+  }
 
   /* REVIEWS */
   .reviews-section{background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-cream) 100%)}

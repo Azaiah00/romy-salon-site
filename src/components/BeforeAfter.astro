@@ -1,0 +1,128 @@
+---
+/**
+ * BeforeAfter — draggable before/after reveal slider.
+ *
+ * Props:
+ *  - before   : image URL shown on the LEFT of the handle (the "before" state)
+ *  - after    : image URL shown on the RIGHT of the handle (the finished result)
+ *  - alt      : accessible description of the transformation
+ *  - start    : initial handle position 0–100 (default 50)
+ *
+ * Accessibility: a real <input type="range"> drives the reveal, so the slider
+ * is keyboard-operable and screen-reader friendly. Pointer/touch drag is layered on top.
+ */
+interface Props {
+  before: string;
+  after: string;
+  alt: string;
+  start?: number;
+}
+const { before, after, alt, start = 50 } = Astro.props;
+---
+
+<figure class="ba-slider" style={`--pos:${start}%`}>
+  <div class="ba-stage">
+    <!-- AFTER (base layer, full width) -->
+    <img class="ba-img ba-after" src={after} alt={`${alt} — after`} loading="lazy" draggable="false" />
+    <!-- BEFORE (clipped overlay) -->
+    <div class="ba-before-clip">
+      <img class="ba-img ba-before" src={before} alt={`${alt} — before (digitally simulated)`} loading="lazy" draggable="false" />
+    </div>
+
+    <span class="ba-tag ba-tag-before">Before</span>
+    <span class="ba-tag ba-tag-after">After</span>
+
+    <!-- Handle -->
+    <div class="ba-handle" aria-hidden="true">
+      <span class="ba-line"></span>
+      <span class="ba-knob">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+          <polyline points="9 18 3 12 9 6" transform="translate(12 0)"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <input class="ba-range" type="range" min="0" max="100" value={start}
+           aria-label={`Reveal slider: ${alt}. Drag to compare before and after.`} />
+  </div>
+</figure>
+
+<style>
+  .ba-slider{ margin:0; }
+  .ba-stage{
+    position:relative; width:100%; aspect-ratio:3/4; overflow:hidden;
+    background:var(--bg-cream); user-select:none; touch-action:pan-y;
+    box-shadow:0 2px 24px rgba(167,127,142,0.10);
+  }
+  .ba-img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; display:block; pointer-events:none;
+  }
+  .ba-before-clip{
+    position:absolute; inset:0; width:var(--pos); overflow:hidden;
+    will-change:width;
+  }
+  /* keep the before image full-bleed inside the clip so it doesn't squash */
+  .ba-before-clip .ba-before{ width:100cqw; }
+  .ba-stage{ container-type:inline-size; }
+
+  .ba-tag{
+    position:absolute; top:16px; z-index:3;
+    font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600;
+    letter-spacing:0.22em; text-transform:uppercase; color:var(--ink);
+    background:rgba(253,248,244,0.92); padding:6px 12px;
+    backdrop-filter:blur(2px);
+  }
+  .ba-tag-before{ left:16px; }
+  .ba-tag-after{ right:16px; }
+
+  .ba-handle{
+    position:absolute; top:0; bottom:0; left:var(--pos); z-index:4;
+    transform:translateX(-50%); pointer-events:none;
+  }
+  .ba-line{
+    position:absolute; top:0; bottom:0; left:50%; width:2px;
+    transform:translateX(-50%); background:var(--paper);
+    box-shadow:0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .ba-knob{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:46px; height:46px; border-radius:50%;
+    background:var(--paper); color:var(--gold-deep);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(167,127,142,0.32);
+    border:1px solid var(--gold);
+  }
+
+  /* the real control: invisible full-stage range */
+  .ba-range{
+    position:absolute; inset:0; width:100%; height:100%; margin:0;
+    opacity:0; cursor:ew-resize; z-index:5;
+    -webkit-appearance:none; appearance:none; background:transparent;
+  }
+  .ba-range::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none; width:46px; height:100%;
+  }
+  .ba-range::-moz-range-thumb{ width:46px; height:100%; border:0; background:transparent; }
+  .ba-range:focus-visible + .ba-line,
+  .ba-range:focus-visible{ outline:none; }
+  .ba-slider:focus-within .ba-knob{ box-shadow:0 0 0 4px var(--rose-pale),0 4px 16px rgba(167,127,142,0.32); }
+</style>
+
+<script is:inline>
+  // Initialise every slider on the page.
+  (function () {
+    function initBeforeAfter() {
+      document.querySelectorAll('.ba-slider').forEach(function (slider) {
+        var range = slider.querySelector('.ba-range');
+        if (!range) return;
+        var apply = function () { slider.style.setProperty('--pos', range.value + '%'); };
+        range.addEventListener('input', apply);
+        apply();
+      });
+    }
+    if (document.readyState !== 'loading') initBeforeAfter();
+    else document.addEventListener('DOMContentLoaded', initBeforeAfter);
+  })();
+</script>

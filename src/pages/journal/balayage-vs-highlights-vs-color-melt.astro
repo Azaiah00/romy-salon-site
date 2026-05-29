@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/journal-post.css';
+
+const post = {
+  title: 'Balayage vs. Highlights vs. Color Melt',
+  subtitle: 'A master stylist breaks down which lightening technique is right for you — and why most salons never explain the difference.',
+  date: '2026-05-10',
+  readTime: '5 min read',
+  category: 'Education',
+  author: 'Romy',
+  heroImg: '/projectHair4.jpg',
+};
+---
+<BaseLayout
+  title={`${post.title} | The Romy Salon Journal`}
+  description="Balayage, foil highlights, and color melt all lighten hair. They cost about the same. So why does picking the right one matter? A 5-minute read from a master colorist in Fairfax VA."
+  ogImage={post.heroImg}
+>
+
+<article class="post-page">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Home</a> / <a href="/journal">The Journal</a> / Education</div>
+      <div class="post-cat">{post.category}</div>
+      <h1>{post.title}</h1>
+      <p class="post-sub">{post.subtitle}</p>
+      <div class="post-meta">
+        <span>By <a href="/team">{post.author}</a></span>
+        <span>{new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</span>
+        <span>{post.readTime}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-hero-image">
+    <img src={post.heroImg} alt="A balayage transformation at Romy Salon" />
+  </div>
+
+  <div class="post-body">
+    <div class="wrap-narrow">
+
+      <p class="lede-p">They all lighten your hair. They all cost about the same. So why does picking the right one matter? Because each one creates a fundamentally different LOOK — and getting talked into the wrong one means three weeks of disappointment before you can come back.</p>
+
+      <p>I'm going to break down the three most-requested lightening services we do at Romy Salon — what each one is, what it looks like, who it's best for, and how often you'll need to maintain it. By the end of this article, you'll know exactly what to ask for at your next color appointment.</p>
+
+      <h2>The short version (if you only read this far)</h2>
+
+      <div class="compare-mini">
+        <table>
+          <thead>
+            <tr><th></th><th>Balayage</th><th>Foil Highlights</th><th>Color Melt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Technique</td><td>Hand-painted, freehand</td><td>Sections wrapped in foil</td><td>Multiple colors melted together</td></tr>
+            <tr><td>Looks like</td><td>Sun-kissed, soft</td><td>Defined, brighter</td><td>Graduated, dimensional</td></tr>
+            <tr><td>Maintenance</td><td>10–14 weeks</td><td>6–8 weeks</td><td>8–12 weeks</td></tr>
+            <tr><td>Best for</td><td>Lived-in, low-key</td><td>Contrast, brightness</td><td>Smooth root-to-tip shift</td></tr>
+            <tr><td>Starting price</td><td>$185</td><td>$185</td><td>$245</td></tr>
+            <tr><td>Time in chair</td><td>2.5–3.5 hrs</td><td>2.5–3 hrs</td><td>3–4 hrs</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Balayage: the hand-painted technique</h2>
+
+      <p>Balayage (French for "to sweep") is hand-painting color onto the hair using a freehand technique — usually with a board behind the section to control bleed. There are no foils.</p>
+
+      <h3>What it looks like</h3>
+
+      <p>Soft, blended, sun-kissed. Like you spent two weeks in the Mediterranean. The lightness is concentrated where the sun would naturally hit (cheekbones, mid-lengths, ends) and the roots stay close to your natural color.</p>
+
+      <h3>Who it's best for</h3>
+
+      <ul>
+        <li>You want a low-maintenance look</li>
+        <li>You're growing out previous color</li>
+        <li>You hate root touchups</li>
+        <li>You want lightness without the contrast of stripes</li>
+        <li>You travel and don't want a color crisis between trips</li>
+      </ul>
+
+      <h3>Maintenance</h3>
+
+      <p>Most balayage clients come in every 10–14 weeks. Some stretch it to 16 weeks because the grow-out is so soft. Between appointments, a $65 gloss every 6–8 weeks keeps the tone fresh.</p>
+
+      <h2>Foil highlights: the precision technique</h2>
+
+      <p>Highlights involve sectioning the hair, painting on lightener, and wrapping each section in foil. The foil traps heat and creates a more processed (i.e., lighter) result than balayage can achieve.</p>
+
+      <h3>What it looks like</h3>
+
+      <p>Brighter, more defined, more dimensional. Real contrast between the highlight pieces and the surrounding hair. The lightening reaches all the way to the root — which is what creates that "wow" effect when fresh, but also creates a visible line when grown out.</p>
+
+      <h3>Who it's best for</h3>
+
+      <ul>
+        <li>You want bright, brighter, brightest</li>
+        <li>You're going from brunette to blonde</li>
+        <li>You want salon-quality result that photographs well</li>
+        <li>You're okay with maintenance every 6–8 weeks</li>
+        <li>You have an event coming up and need a real "after"</li>
+      </ul>
+
+      <h3>Maintenance</h3>
+
+      <p>Foil highlights need touch-ups every 6–8 weeks to keep the root line from getting too obvious. Many clients pair them with regular root touchups for a complete look.</p>
+
+      <h2>Color melt: the seamless transition technique</h2>
+
+      <p>Color melt is the newest of the three. It involves applying multiple colors at different depths of the hair — usually a darker root, a mid-tone in the middle, and a lighter tone on the ends — and "melting" them together so the transition is invisible.</p>
+
+      <h3>What it looks like</h3>
+
+      <p>A graduated, root-to-tip shift in color. Like a candle. Like the sky at sunset. No visible line where one color ends and another begins. Often used for fashion colors (deep auburn fading into copper, dark brown fading into honey).</p>
+
+      <h3>Who it's best for</h3>
+
+      <ul>
+        <li>You want dimension without lifting your whole head</li>
+        <li>You're a brunette who wants warm ends without going full blonde</li>
+        <li>You want fashion color (auburn, copper, soft fashion tones) blended into your natural</li>
+        <li>You hate visible root lines but want more contrast than balayage</li>
+      </ul>
+
+      <h3>Maintenance</h3>
+
+      <p>Color melt grows out beautifully — usually 8–12 weeks between appointments. The deeper root means you essentially have a planned "shadow root" built in.</p>
+
+      <h2>The honest comparison most stylists won't make</h2>
+
+      <p>Here's the truth: at most salons, you'll be steered toward whichever service they sold the most of last quarter. At Romy Salon, we recommend the service based on your hair, your lifestyle, and the photo you brought in.</p>
+
+      <div class="callout-card">
+        <strong>Quick decision filter:</strong> if you want maintenance every 10+ weeks, go balayage. If you want maximum brightness for an event, go foil highlights. If you want a seamless root-to-tip color story, go color melt.
+      </div>
+
+      <h2>What we ask in your consultation</h2>
+
+      <p>Before recommending one of these three, we ask:</p>
+
+      <ol>
+        <li>How often can you realistically come in?</li>
+        <li>How much contrast do you want — subtle or wow?</li>
+        <li>Do you wear your hair up or down most days?</li>
+        <li>What's your hair history (previous color, box dye, treatments)?</li>
+        <li>Does your hair frizz, swell, or shrink when humid?</li>
+        <li>What's your budget — not just for today, but for the year?</li>
+      </ol>
+
+      <p>The answers determine the recommendation. Pinterest photos are great input, but the recommendation comes from understanding YOU — not the photo.</p>
+
+      <div class="cta-card">
+        <h3>Want our recommendation for your hair?</h3>
+        <p>Book a free 20-minute consultation. We'll tell you which of the three (if any) is right for you.</p>
+        <a href="/contact" class="btn lg gold">Request Consultation</a>
+        <a href="/balayage-fairfax-va" class="btn lg ghost">Balayage Pricing</a>
+      </div>
+
+      <div class="post-foot">
+        <p><strong>About the author.</strong> Romy is the founder and master stylist at Romy Salon &amp; Spa in Old Town Fairfax. She specializes in custom color, balayage, color correction, and fantasy color. <a href="/team">Read her full bio</a>.</p>
+        <p class="updated">Last updated: {new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="wrap">
+      <div class="section-eyebrow">More from the Journal</div>
+      <h2 class="section-h">Keep <span class="italic">reading.</span></h2>
+      <div class="ornament"></div>
+      <div class="related-grid">
+        <a href="/journal/fairfax-2026-color-trend-report" class="related-card">
+          <h4>The Fairfax 2026 Color Trend Report</h4>
+          <p>What walked into the chair this year, what quietly left, and 3 predictions for the second half of 2026.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/journal/caring-for-blonde-hair-in-northern-virginia-humidity" class="related-card">
+          <h4>Caring for Blonde Hair in NoVA Humidity</h4>
+          <p>Brassiness, frizz, and "swimmer's green" — three things NoVA blondes battle from May through September.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/balayage-fairfax-va" class="related-card">
+          <h4>Balayage in Fairfax VA — Full Guide</h4>
+          <p>Pricing, what to expect, comparison to highlights, and what makes our balayage different.</p>
+          <span class="related-link">Read guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  'headline': post.title,
+  'description': post.subtitle,
+  'image': post.heroImg,
+  'datePublished': post.date,
+  'dateModified': post.date,
+  'author': { '@type':'Person', '@id':'https://romysalon.com/#romy', 'name':'Romy' },
+  'publisher': { '@type':'HairSalon', '@id':'https://romysalon.com/#business', 'name':'Romy Salon & Spa' },
+  'mainEntityOfPage': 'https://romy-salon-site.vercel.app/journal/balayage-vs-highlights-vs-color-melt',
+  'keywords': 'balayage vs highlights, color melt, hair lightening, Fairfax VA hair color'
+})} />
+
+</BaseLayout>
