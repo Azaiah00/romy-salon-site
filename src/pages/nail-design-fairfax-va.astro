@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+const gallery = [
+  { src: '/nails-gold.jpg', alt: 'Gold metallic nail design' },
+  { src: '/nails-pink-ombre2.webp', alt: 'Pink ombre nail design' },
+  { src: '/unias3.webp', alt: 'Romy Salon nail design with Swarovski crystals' },
+  { src: '/unias4.jpg', alt: 'Luxury manicure detail' },
+  { src: '/unias7.jpg', alt: 'Custom nail art' }
+];
+
+const faqs = [
+  { q: 'How much does a manicure cost at Romy Salon in Fairfax?', a: 'A classic manicure is $45, luxury manicure is $65, gel manicure is $60, and Gel-X extensions start at $85. Pedicures: classic $65, luxury $95, gel $80. Swarovski crystal designs are $8 per nail and can be added to any service.' },
+  { q: 'What is Gel-X and how is it different from acrylics?', a: 'Gel-X is a soft gel nail extension that gives you the length of acrylic without the damage. The extension is pre-shaped, fitted to your natural nail, and cured under LED light. Lifts less than acrylic, removes safely with acetone (no filing your natural nail), and the finish looks more natural.' },
+  { q: 'Do you do nail art and crystal designs?', a: 'Yes — hand-painted nail art, French and ombre tips, marble effects, foil work, and Swarovski crystal placement are all available. Crystals are $8 per nail. Complex hand-painted designs (intricate flowers, abstract art) are quoted per design.' },
+  { q: 'How long do gel and Gel-X last?', a: 'Gel polish lasts 2–3 weeks before tip wear. Gel-X extensions last 3–4 weeks before fills. Both should be removed with proper acetone soak (not picked off) to keep your natural nails healthy.' },
+  { q: 'Are your tools sanitized?', a: 'Yes — we use single-use tools whenever possible (files, buffers, orange sticks). Reusable tools (metal pushers, cuticle nippers) are heat-sterilized in a medical-grade autoclave between every guest. Pedicure tubs are jet-flushed and disinfected after each use.' },
+  { q: 'Do you do pedicures with extensions or for thick toenails?', a: 'Yes. For pedicures we use soaking tubs, exfoliation, callus reduction (mechanical, not blade), nail shaping, cuticle care, hot stone massage on the calves, and polish. For thick toenails we have specialized clippers and can refer out for medical pedicure when needed.' }
+];
+---
+<BaseLayout
+  title="Luxury Nail Design in Fairfax VA | Manicure, Pedicure, Gel-X, Swarovski · Romy Salon"
+  description="Luxury nail design in Old Town Fairfax — classic manicure from $45, Gel-X extensions from $85, Swarovski crystal art. Single-use tools, autoclave sterilization, hand-painted nail art."
+  ogImage="/nails-gold.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / Nail Design in Fairfax</div>
+    <h1>Luxury nail design. <span class="italic">Tiny jewelry.</span></h1>
+    <p class="lede">Classic neutrals to Swarovski crystal art. Gel-X extensions. Spa pedicures. Hand-painted designs. Old Town Fairfax. From $45.</p>
+    <div class="cta-row">
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Your Nail Appointment</a>
+      <a href="#pricing" class="btn lg ghost">See Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Quick Answer</div>
+      <p><strong>Nail services at Romy Salon in Fairfax start at $45 for a classic manicure and $65 for a classic pedicure.</strong> Gel manicures are $60, Gel-X extensions start at $85. Luxury pedicure with aromatherapy and hot-stone massage is $95. Swarovski crystal nail art is $8 per nail and can be added to any service. We use single-use tools where possible and autoclave-sterilize reusable tools between every guest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="nail-gallery-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Recent work</div>
+    <h2 class="section-h">A small <span class="italic">selection.</span></h2>
+    <div class="ornament"></div>
+    <div class="nail-gallery">
+      {gallery.map((g, i) => (
+        <div class={`ngal-tile ${i===0 ? 'big' : ''}`}>
+          <img src={g.src} alt={g.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">What makes our nails different</div>
+    <h2 class="section-h">A manicure that feels like <span class="italic">jewelry.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>Sterilization you can hear</h4><p>Medical-grade autoclave between every guest. The same machine dentists use. Single-use tools for everything that can be single-use.</p></div>
+      <div class="item"><h4>Real designs, by hand</h4><p>French, marble, foil, ombre, micro flowers, abstract — hand-painted by an artist, not pulled from a wheel of pre-printed stickers.</p></div>
+      <div class="item"><h4>Gel-X without damage</h4><p>Gel-X extensions remove with acetone soak (no filing your natural nail). The length of acrylic, none of the brittleness.</p></div>
+      <div class="item"><h4>Pedicures that feel like spa</h4><p>Aromatherapy soak, exfoliation, callus reduction (mechanical, never a blade), hot-stone calf massage, polish. 60–90 minutes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Nail menu</div>
+    <h2 class="section-h">Pricing, <span class="italic">simply.</span></h2>
+    <div class="ornament"></div>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">Classic Manicure<span class="pdesc">Shape, cuticle care, polish.</span></div><div class="pprice">$45</div></div>
+      <div class="prow"><div class="pname">Luxury Manicure<span class="pdesc">With hand exfoliation + paraffin treatment.</span></div><div class="pprice">$65</div></div>
+      <div class="prow"><div class="pname">Gel Manicure<span class="pdesc">2-week wear, mirror finish.</span></div><div class="pprice">$60</div></div>
+      <div class="prow"><div class="pname">Gel-X Extensions<span class="pdesc">Soft-gel length, removes safely.</span></div><div class="pprice">From $85</div></div>
+      <div class="prow"><div class="pname">Classic Pedicure<span class="pdesc">Shape, exfoliate, callus, polish, massage.</span></div><div class="pprice">$65</div></div>
+      <div class="prow"><div class="pname">Luxury Spa Pedicure<span class="pdesc">Aromatherapy + hot-stone calf massage. 60–90 min.</span></div><div class="pprice">$95</div></div>
+      <div class="prow"><div class="pname">Gel Pedicure<span class="pdesc">Long-wear polish with gel finish.</span></div><div class="pprice">$80</div></div>
+      <div class="prow"><div class="pname">Swarovski Crystal Design<span class="pdesc">Hand-set crystals. Per nail.</span></div><div class="pprice">$8/nail</div></div>
+      <div class="prow"><div class="pname">Hand-Painted Nail Art<span class="pdesc">Quoted per design complexity.</span></div><div class="pprice">From $15</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-compare">
+  <div class="wrap">
+    <div class="section-eyebrow">Choosing between extensions</div>
+    <h2 class="section-h">Gel-X vs. acrylic vs. <span class="italic">natural nail.</span></h2>
+    <div class="ornament"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Gel-X (we recommend)</th><th>Acrylic</th><th>Natural Nail + Gel</th></tr></thead>
+        <tbody>
+          <tr><td>Length</td><td>Up to 1 inch</td><td>Any length</td><td>Your natural length</td></tr>
+          <tr><td>Application time</td><td>60–75 min</td><td>90+ min</td><td>45 min</td></tr>
+          <tr><td>Removal</td><td>Acetone soak</td><td>File + acetone (damaging)</td><td>Acetone soak</td></tr>
+          <tr><td>Damage to natural nail</td><td>Minimal</td><td>Significant</td><td>None</td></tr>
+          <tr><td>Wear time</td><td>3–4 weeks</td><td>2–3 weeks (lifts)</td><td>2–3 weeks</td></tr>
+          <tr><td>Starting price</td><td>$85</td><td>$70</td><td>$60</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Areas served</div>
+    <h2 class="section-h">Nails for <span class="italic">all of NoVA.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">Free street parking in Old Town Fairfax. Sundays open.</p>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>Annandale</div><div>McLean</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Common questions</div>
+    <h2 class="section-h">Before your <span class="italic">first manicure.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>Treat your hands like <span class="italic">jewelry.</span></h2>
+    <p>Same-week appointments often available.</p>
+    <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Online</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or 571.407.5801</a>
+    <div class="updated">Page last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Luxury Nail Design in Fairfax VA',
+  'description':'Manicure, pedicure, Gel-X extensions, Swarovski crystal nail art, and hand-painted nail design in Old Town Fairfax. Single-use tools and autoclave sterilization.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'offers':[
+    {'@type':'Offer','name':'Classic Manicure','price':'45','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Luxury Manicure','price':'65','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Gel Manicure','price':'60','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Gel-X Extensions','price':'85','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Classic Pedicure','price':'65','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Luxury Spa Pedicure','price':'95','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+<style>
+  .nail-gallery-section{padding:80px 0;background:var(--bg)}
+  .nail-gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:30px}
+  @media(max-width:900px){.nail-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}}
+  .ngal-tile{overflow:hidden;background:var(--paper)}
+  .ngal-tile.big{grid-row:span 2;grid-column:span 2}
+  .ngal-tile img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+  .ngal-tile:hover img{transform:scale(1.05)}
+</style>
+
+</BaseLayout>

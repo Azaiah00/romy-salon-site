@@ -1,0 +1,71 @@
+/* Shared styles for SEO landing pages (/balayage-fairfax-va, /color-correction-fairfax-va, etc.) */
+
+.lp-hero{background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);padding:90px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+.lp-hero .breadcrumb{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px}
+.lp-hero .breadcrumb a{color:inherit;border-bottom:1px solid transparent}
+.lp-hero .breadcrumb a:hover{border-bottom-color:var(--gold)}
+.lp-hero h1{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:400;line-height:1.1;letter-spacing:-0.01em;color:var(--ink);max-width:880px;margin:0 auto 18px}
+.lp-hero h1 .italic{font-style:italic}
+.lp-hero .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--ink);max-width:680px;margin:0 auto 32px}
+.lp-hero .cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.lp-hero h1{font-size:2.2rem}}
+
+.quick-answer{padding:50px 0;background:var(--bg)}
+.qa-card{max-width:780px;margin:0 auto;background:var(--paper);padding:34px 40px;border-left:4px solid var(--gold);box-shadow:0 2px 18px rgba(167,127,142,0.06)}
+.qa-eyebrow{color:var(--gold-deep);font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:10px}
+.qa-card p{font-size:16px;line-height:1.75;color:var(--ink);margin:0}
+
+.lp-diff{padding:90px 0;background:var(--bg-soft)}
+.lp-diff .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+@media(max-width:900px){.lp-diff .grid{grid-template-columns:1fr}}
+.lp-diff .item{background:var(--paper);padding:32px 28px;border-left:3px solid var(--gold);box-shadow:0 2px 18px rgba(167,127,142,0.05)}
+.lp-diff .item h4{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--ink);margin-bottom:10px}
+.lp-diff .item p{color:var(--ink);font-size:14.5px;line-height:1.7}
+
+.lp-pricing{padding:90px 0;background:var(--bg)}
+.lp-price-table{max-width:880px;margin:30px auto 0;background:var(--paper);padding:30px 40px;box-shadow:0 2px 22px rgba(167,127,142,0.07)}
+@media(max-width:900px){.lp-price-table{padding:20px 22px}}
+.lp-price-table .prow{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px dotted var(--line);gap:20px}
+.lp-price-table .prow:last-child{border-bottom:0}
+.lp-price-table .pname{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);flex:1}
+.lp-price-table .pdesc{display:block;font-family:'Open Sans',sans-serif;font-size:13px;font-weight:300;color:var(--ink);margin-top:2px;line-height:1.5}
+.lp-price-table .pprice{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--gold-deep);white-space:nowrap}
+.lp-price-foot{text-align:center;margin-top:24px;color:var(--ink);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1rem}
+
+.lp-compare{padding:90px 0;background:var(--bg-soft)}
+.lp-compare .table-wrap{max-width:980px;margin:30px auto 0;overflow-x:auto}
+.lp-compare table{width:100%;border-collapse:collapse;background:var(--paper);font-family:'Montserrat',sans-serif;font-size:14px}
+.lp-compare th,.lp-compare td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.lp-compare th{background:var(--ink);color:var(--gold);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600}
+.lp-compare tbody td:first-child{font-weight:600;color:var(--mauve-deep);font-size:13px}
+
+.lp-expect{padding:90px 0;background:var(--ink);color:var(--bg)}
+.lp-expect .section-eyebrow{color:var(--gold)}
+.lp-expect .section-h{color:var(--bg)}
+.lp-expect .ornament::after{background:var(--ink)}
+.lp-expect .steps{max-width:760px;margin:50px auto 0}
+.lp-expect .step{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid rgba(214,185,129,0.2)}
+.lp-expect .step:last-child{border-bottom:0}
+.lp-expect .step .n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--gold);line-height:1}
+.lp-expect .step h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--bg);margin-bottom:8px}
+.lp-expect .step p{color:var(--bg);opacity:0.8;font-size:14.5px;line-height:1.65}
+
+.lp-areas{padding:90px 0;background:var(--bg)}
+.lp-areas .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:720px;margin:24px auto 0}
+@media(max-width:600px){.lp-areas .grid{grid-template-columns:1fr 1fr}}
+.lp-areas .grid > div{background:var(--paper);padding:18px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink);border:1px solid var(--line)}
+
+.lp-faq{padding:90px 0;background:var(--bg-soft)}
+.lp-faq .list{max-width:780px;margin:30px auto 0}
+.lp-faq details{background:var(--paper);margin-bottom:12px;box-shadow:0 1px 8px rgba(167,127,142,0.04)}
+.lp-faq summary{padding:22px 28px;cursor:pointer;list-style:none;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.lp-faq summary::-webkit-details-marker{display:none}
+.lp-faq summary::after{content:'+';color:var(--gold-deep);font-size:1.7rem;font-weight:300;transition:transform 0.2s}
+.lp-faq details[open] summary::after{transform:rotate(45deg)}
+.lp-faq .a{padding:0 28px 24px;color:var(--ink);font-size:15px;line-height:1.75}
+
+.lp-final{text-align:center;background:linear-gradient(135deg,var(--rose-pale) 0%,var(--bg-cream) 100%);padding:100px 0}
+.lp-final h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;margin-bottom:18px;color:var(--ink)}
+.lp-final h2 .italic{font-style:italic}
+.lp-final p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--ink);margin-bottom:36px}
+.lp-final .updated{margin-top:32px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.15em;color:var(--mauve);text-transform:uppercase}

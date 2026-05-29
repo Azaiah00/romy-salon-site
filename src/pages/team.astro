@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = [
+  {
+    name: 'Romy',
+    role: 'Master Stylist · Founder · Color Theorist',
+    img: '/about-romy-left.jpeg',
+    bio: 'Romy is the founder of Romy Salon & Spa and a master stylist with 15+ years of experience across two continents. Her specialty is custom color — fantasy shades, silver tones, platinum blondes, and the color corrections other salons refer out. She trained in Latin America and the US, and her work has been the quiet referral that passes between friends, mothers, and daughters.',
+    quote: '"Hair is a canvas. My job is to read the light, the skin, the personality — and paint a version of you that feels right the moment you see yourself in the mirror."',
+    specialties: ['Custom Color', 'Balayage', 'Color Correction', 'Fantasy Color', 'Silver / Platinum', 'Bridal Hair', 'Quinceañera'],
+    languages: ['English', 'Spanish'],
+    bookText: 'Book with Romy',
+    instagram: 'https://www.instagram.com/romy_salonandspa/'
+  }
+];
+---
+<BaseLayout
+  title="Meet the Team | Romy Salon & Spa · Master Stylist Romy"
+  description="Meet Romy — master stylist and founder of Romy Salon & Spa in Old Town Fairfax. 15+ years specializing in custom color, balayage, color correction, fantasy color, and bridal styling. Bilingual."
+  ogImage="/about-romy-left.jpeg"
+>
+
+<div class="page-banner">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / The Team</div>
+    <h1>Meet the <span class="italic">team.</span></h1>
+    <p class="subtitle">A small, intentional studio — built around one master stylist with the experience and patience that brings clients back year after year.</p>
+  </div>
+</div>
+
+<section class="team-section">
+  <div class="wrap">
+    {team.map((member, idx) => (
+      <article class={`stylist ${idx % 2 ? 'reverse' : ''}`}>
+        <div class="stylist-photo">
+          <img src={member.img} alt={`Portrait of ${member.name}, ${member.role}`} loading="lazy" />
+        </div>
+        <div class="stylist-info">
+          <div class="section-eyebrow">{member.role}</div>
+          <h2><span class="italic">{member.name}</span></h2>
+          <div class="ornament"></div>
+          <blockquote class="stylist-quote">{member.quote}</blockquote>
+          <div class="stylist-bio">{member.bio}</div>
+
+          <div class="stylist-meta">
+            <div class="meta-block">
+              <h4>Specialties</h4>
+              <ul class="tag-list">
+                {member.specialties.map(s => <li>{s}</li>)}
+              </ul>
+            </div>
+            <div class="meta-block">
+              <h4>Languages</h4>
+              <ul class="tag-list">
+                {member.languages.map(l => <li>{l}</li>)}
+              </ul>
+            </div>
+          </div>
+
+          <div class="stylist-cta">
+            <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn gold">{member.bookText}</a>
+            <a href={member.instagram} target="_blank" rel="noopener" class="btn ghost">Follow on Instagram</a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<!-- HIRING / JOIN US -->
+<section class="hiring-section">
+  <div class="wrap">
+    <div class="section-eyebrow">Join the Studio</div>
+    <h2 class="section-h">Are you a stylist who wants to <span class="italic">do real work?</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">We're building a small team of master-level stylists who care about the craft, the calm, and the client. Reach out if that sounds like you.</p>
+    <div style="text-align:center">
+      <a href="mailto:info@romysalon.com?subject=Stylist%20Inquiry" class="btn lg">Email Us About Joining</a>
+    </div>
+  </div>
+</section>
+
+<!-- Person Schema (entity recognition for Google + AI) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': team.map(m => ({
+    '@type': 'Person',
+    '@id': `https://romysalon.com/#${m.name.toLowerCase().replace(/\s+/g,'-')}`,
+    'name': m.name,
+    'jobTitle': m.role,
+    'description': m.bio,
+    'image': m.img,
+    'worksFor': { '@type':'HairSalon', '@id':'https://romysalon.com/#business', 'name':'Romy Salon & Spa' },
+    'knowsAbout': m.specialties,
+    'knowsLanguage': m.languages,
+    'sameAs': [m.instagram, 'https://www.tiktok.com/@romysalonandspa']
+  }))
+})} />
+
+</BaseLayout>
+
+<style>
+  .team-section{padding:90px 0;background:var(--bg)}
+  .stylist{
+    display:grid;grid-template-columns:5fr 7fr;gap:80px;
+    align-items:center;margin-bottom:120px;
+  }
+  .stylist:last-child{margin-bottom:0}
+  .stylist.reverse{grid-template-columns:7fr 5fr}
+  .stylist.reverse .stylist-photo{order:2}
+  @media(max-width:900px){
+    .stylist{grid-template-columns:1fr;gap:40px}
+    .stylist.reverse .stylist-photo{order:0}
+    .stylist{margin-bottom:80px}
+  }
+  .stylist-photo{aspect-ratio:4/5;overflow:hidden;box-shadow:24px 24px 0 var(--rose-pale)}
+  .stylist-photo img{width:100%;height:100%;object-fit:cover}
+  .stylist-info .section-eyebrow{text-align:left}
+  .stylist-info h2{
+    font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:400;
+    line-height:1;margin:10px 0;color:var(--ink);
+  }
+  .stylist-info h2 .italic{font-style:italic}
+  .stylist-info .ornament{margin:18px 0;width:50px}
+  .stylist-info .ornament::after{left:0;transform:translate(0,-50%);padding:0 10px 0 0;background:var(--bg)}
+  .stylist-quote{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;
+    color:var(--mauve-deep);line-height:1.55;border-left:3px solid var(--gold);
+    padding:8px 0 8px 18px;margin:18px 0 24px;
+  }
+  .stylist-bio{font-size:16px;line-height:1.85;color:var(--ink);margin-bottom:32px}
+  .stylist-meta{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+  .meta-block h4{
+    font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px;
+  }
+  .tag-list{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+  .tag-list li{
+    background:var(--bg-soft);color:var(--ink);padding:5px 12px;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;
+    border:1px solid var(--line);
+  }
+  .stylist-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+  .hiring-section{
+    padding:90px 0;
+    background:linear-gradient(135deg, var(--rose-pale) 0%, var(--bg-cream) 100%);
+  }
+</style>

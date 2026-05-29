@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const post = {
+  title: 'The Fairfax 2026 Color Trend Report',
+  subtitle: 'From mocha mousse to champagne platinum — what walked into the chair this year, what quietly left.',
+  date: '2026-05-20',
+  readTime: '6 min read',
+  category: 'Color Trends',
+  author: 'Romy',
+  heroImg: '/blondes4.jpg',
+};
+---
+<BaseLayout
+  title={`${post.title} | The Romy Salon Journal`}
+  description="A first-half-of-2026 color trend report from Romy Salon in Old Town Fairfax — based on 200+ color appointments. What's hot, what's cooling, and what to ask your colorist for this season."
+  ogImage={post.heroImg}
+>
+
+<article class="post-page">
+
+  <!-- HERO -->
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Home</a> / <a href="/journal">The Journal</a> / Color Trends</div>
+      <div class="post-cat">{post.category}</div>
+      <h1>{post.title}</h1>
+      <p class="post-sub">{post.subtitle}</p>
+      <div class="post-meta">
+        <span>By <a href="/team">{post.author}</a></span>
+        <span>{new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</span>
+        <span>{post.readTime}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-hero-image">
+    <img src={post.heroImg} alt="Platinum silver-blonde balayage — a 2026 color trend at Romy Salon" />
+  </div>
+
+  <!-- POST BODY -->
+  <div class="post-body">
+    <div class="wrap-narrow">
+
+      <p class="lede-p">Every January, a paint company tells the world that "mocha mousse" or "viva magenta" is the color of the year, and every colorist gets asked for it within the week. Half the time, the color doesn't translate to hair at all. So we waited. We watched the actual chairs. After 200+ color appointments at Romy Salon between January and May 2026, here's what's actually moving in Old Town Fairfax right now — and what's quietly heading for the door.</p>
+
+      <h2>What's walking in</h2>
+
+      <h3>1. Champagne platinum (the new "expensive blonde")</h3>
+      <p>For the past four years, "lived-in blonde" balayage dominated. In 2026, our blonde clients are asking for something cooler, brighter, and more deliberate — what we call <strong>champagne platinum</strong>. Think Cate Blanchett at the Oscars, not surfer hair.</p>
+      <p>The difference is technical: instead of hand-painting dimension across natural color, we lift to a near-platinum base, then layer a soft champagne gloss on top. The result is brighter than balayage, more refined than full platinum, and surprisingly low-maintenance — most clients stretch root touch-ups to 10 weeks because the base is so light to begin with.</p>
+      <p><em>Best for:</em> clients who want bright, who don't want orange roots when grown out, who have time for a 3-hour appointment.</p>
+
+      <h3>2. Cinnamon copper (the year's biggest surprise)</h3>
+      <p>We expected cool tones to dominate. Instead, the warmest reds we've offered in five years are flying out the chair. Cinnamon copper — a balanced red-orange with hints of brown — is being requested by both natural blondes wanting depth and natural brunettes wanting heat.</p>
+      <p>What makes 2026's copper different from the rust trend of 2023 is the <strong>shine</strong>. We layer the color with a glossing toner so it reads like polished penny instead of matte rust. Cinnamon copper photographs incredibly under warm restaurant light, which we suspect is the real reason it's spreading.</p>
+
+      <div class="inline-img"><img src="/transformation-copper.jpg" alt="A recent cinnamon copper color transformation at Romy Salon"><p class="img-cap">A recent cinnamon copper transformation — Romy Salon, March 2026.</p></div>
+
+      <h3>3. Silver gray (intentional, not "letting it go")</h3>
+      <p>The biggest shift in our chair this year: clients in their 30s and 40s are asking us to lift their hair to <strong>true silver</strong>. Not "embracing my grays" silver — but Helen Mirren silver on purpose. This requires bleach lift and a violet-blue toner, repeated maintenance every 6 weeks, and it ages incredibly well.</p>
+      <p>We've done more silver lifts this year than the last three years combined.</p>
+
+      <h3>4. Strategic face-framing on natural hair</h3>
+      <p>Not everyone wants a full color service. The fastest-growing request: <strong>face-framing pieces only</strong>, applied to otherwise natural hair, refreshed every 3–4 months. Costs about $135, takes 90 minutes, brightens the entire face in photos. Half our consultations now end with this rather than full balayage.</p>
+
+      <h2>What's quietly leaving</h2>
+
+      <h3>Heavy ombré with dark roots</h3>
+      <p>The "Tumblr ombré" of 2014–2018 (very dark roots, very blonde ends, no blending) has nearly disappeared from our books. Modern requests are blended — even when the contrast is high, the transition reads as graduated rather than blocked.</p>
+
+      <h3>Cool ash brown</h3>
+      <p>For most of the late 2010s, "ash brown" was the universal request for women who wanted darker hair without warmth. In 2026, our brunette clients are warming things up — caramel, cinnamon, soft honey. Pure cool ash now reads aged rather than chic.</p>
+
+      <h3>Box-dye black</h3>
+      <p>OK — this one isn't a trend, but worth noting. Box-dye black is the single hardest color we correct, and we've spent more hours removing it this spring than we've spent on any single service. If you're tempted to box-dye, please call us first. The consultation is free.</p>
+
+      <h2>What we're predicting for the second half of 2026</h2>
+
+      <p>Three calls based on early signals from our chair:</p>
+
+      <ul class="prediction-list">
+        <li><strong>Strawberry blonde returns.</strong> We're seeing the first wave of requests for soft strawberry-blonde balayage on natural blondes. Expect this to peak by August.</li>
+        <li><strong>Subtle fashion gloss.</strong> Not full fantasy color — but a soft pink or lavender gloss applied over blonde, washing out after 4–6 weeks. Low commitment, high content.</li>
+        <li><strong>"Coffee cake" brunette.</strong> A multi-tonal brown with caramel, chestnut, and a touch of cinnamon woven through. Replaces "balayage brunette" as the most-requested brown service.</li>
+      </ul>
+
+      <h2>How to ask for what you actually want</h2>
+
+      <p>The single most useful thing you can bring to a color consultation isn't a Pinterest board — it's a list of colors you <strong>don't</strong> want. "Not yellow," "not orange when it grows out," "not warmer than a champagne," "not a contrast hard line at the root." That tells your colorist more than any inspiration photo.</p>
+
+      <p>The second most useful thing is honesty about maintenance. A look that requires touch-ups every 4 weeks lives a different life than one you refresh every 10. Tell your colorist how much time and money you actually want to spend, and let them recommend the look that fits your life — not just the photo.</p>
+
+      <p>Booking a consultation at Romy Salon is free for color services. Twenty minutes, in person or via video. We'll talk about your goals, your hair history, your maintenance preferences, and the realistic timeline to get from where you are to where you want to be. <a href="/contact">Book here</a>, or email <a href="mailto:info@romysalon.com">info@romysalon.com</a> with two photos of your hair in natural daylight.</p>
+
+      <div class="cta-card">
+        <h3>Ready to book?</h3>
+        <p>Same-week appointments often available. Color Journey from $375.</p>
+        <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Online</a>
+        <a href="/balayage-fairfax-va" class="btn lg ghost">Read About Balayage</a>
+      </div>
+
+      <div class="post-foot">
+        <p><strong>About the author.</strong> Romy is the founder and master stylist at Romy Salon &amp; Spa in Old Town Fairfax. She specializes in custom color, balayage, color correction, and fantasy color. <a href="/team">Read her full bio</a>.</p>
+        <p class="updated">Last updated: {new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RELATED POSTS / NEXT -->
+  <section class="related-section">
+    <div class="wrap">
+      <div class="section-eyebrow">More from the Journal</div>
+      <h2 class="section-h">Keep <span class="italic">reading.</span></h2>
+      <div class="ornament"></div>
+      <div class="related-grid">
+        <a href="/journal" class="related-card">
+          <h4>Balayage vs. Highlights vs. Color Melt</h4>
+          <p>A master stylist breaks down which lightening technique is right for you, and why most salons don't explain the difference.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/journal" class="related-card">
+          <h4>Caring for Blonde Hair in NoVA Humidity</h4>
+          <p>Brassiness, frizz, and "swimmer's green" — three things Northern Virginia blondes battle from May through September.</p>
+          <span class="related-link">Read article →</span>
+        </a>
+        <a href="/balayage-fairfax-va" class="related-card">
+          <h4>Balayage in Fairfax VA — Full Guide</h4>
+          <p>Pricing, what to expect, comparison to highlights, and what makes our balayage different.</p>
+          <span class="related-link">Read guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<!-- BlogPosting Schema for AEO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  'headline': post.title,
+  'description': post.subtitle,
+  'image': post.heroImg,
+  'datePublished': post.date,
+  'dateModified': post.date,
+  'author': { '@type':'Person', '@id':'https://romysalon.com/#romy', 'name':'Romy' },
+  'publisher': { '@type':'HairSalon', '@id':'https://romysalon.com/#business', 'name':'Romy Salon & Spa' },
+  'mainEntityOfPage': `https://romy-salon-site.vercel.app/journal/fairfax-2026-color-trend-report`,
+  'keywords': '2026 hair color trends, Fairfax VA hair color, champagne platinum, cinnamon copper, silver hair, balayage'
+})} />
+
+</BaseLayout>
+
+<style>
+  .post-page{background:var(--bg)}
+
+  .post-hero{background:linear-gradient(135deg, var(--bg-cream) 0%, var(--rose-pale) 100%);padding:80px 0 60px;text-align:center;border-bottom:1px solid var(--line)}
+  .post-hero .breadcrumb{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .post-hero .post-cat{display:inline-block;background:var(--ink);color:var(--gold);padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px}
+  .post-hero h1{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:400;line-height:1.1;letter-spacing:-0.01em;color:var(--ink);max-width:880px;margin:0 auto 14px}
+  @media(max-width:900px){.post-hero h1{font-size:2.4rem}}
+  .post-hero .post-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--ink);max-width:680px;margin:0 auto 24px;line-height:1.5}
+  .post-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mauve)}
+  .post-meta a{color:var(--gold-deep);border-bottom:1px dotted var(--gold)}
+
+  .post-hero-image{max-width:1200px;margin:0 auto;aspect-ratio:21/9;overflow:hidden}
+  .post-hero-image img{width:100%;height:100%;object-fit:cover}
+
+  .post-body{padding:80px 0 100px;background:var(--bg)}
+  .wrap-narrow{max-width:760px;margin:0 auto;padding:0 32px}
+  @media(max-width:768px){.wrap-narrow{padding:0 22px}}
+  .post-body p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:20px}
+  .lede-p{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;line-height:1.55;color:var(--mauve-deep);margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+  .post-body h2{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:400;color:var(--ink);margin:50px 0 18px;letter-spacing:-0.01em}
+  .post-body h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--mauve-deep);margin:32px 0 14px;font-style:italic}
+  .post-body a{color:var(--gold-deep);border-bottom:1px solid var(--gold);transition:color 0.2s}
+  .post-body a:hover{color:var(--mauve-deep)}
+  .post-body strong{color:var(--mauve-deep);font-weight:600}
+
+  .inline-img{margin:38px 0}
+  .inline-img img{width:100%;display:block}
+  .inline-img .img-cap{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:14px;margin-top:10px}
+
+  .prediction-list{list-style:none;padding:0;margin:24px 0;display:grid;gap:14px}
+  .prediction-list li{background:var(--bg-soft);padding:18px 24px;border-left:3px solid var(--gold);font-size:16px;line-height:1.65}
+
+  .cta-card{background:linear-gradient(135deg, var(--rose-pale) 0%, var(--bg-cream) 100%);padding:40px;text-align:center;margin:50px 0 30px}
+  .cta-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:500;color:var(--ink);margin-bottom:8px}
+  .cta-card p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--ink);margin-bottom:20px}
+  .cta-card .btn{margin:0 4px}
+
+  .post-foot{margin-top:60px;padding-top:36px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink);line-height:1.7}
+  .post-foot p{font-size:14.5px}
+  .post-foot .updated{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+
+  .related-section{background:var(--bg-soft);padding:80px 0}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+  @media(max-width:900px){.related-grid{grid-template-columns:1fr}}
+  .related-card{background:var(--paper);padding:28px 26px;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--line);transition:transform 0.25s, box-shadow 0.25s}
+  .related-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(167,127,142,0.14)}
+  .related-card h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.25}
+  .related-card p{color:var(--ink);font-size:14px;line-height:1.6;flex:1}
+  .related-link{margin-top:14px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:2px;align-self:flex-start}
+</style>

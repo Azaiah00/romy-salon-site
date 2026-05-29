@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+const faqs = [
+  { q: 'How much does color correction cost in Fairfax?', a: 'Color correction at Romy Salon starts at $350 and can reach $800+ depending on the starting condition, desired result, and time required. After the complimentary consultation, you receive a written quote before any chemical service begins. No surprise pricing — ever.' },
+  { q: 'Do I need a consultation before booking?', a: 'Yes. Color corrections are too complex to quote blind. Email two photos in natural daylight to info@romysalon.com or schedule a free 20-minute video consultation. Romy will assess your hair condition, plan the multi-step approach, and quote accurately before you commit.' },
+  { q: 'How long does a color correction take?', a: 'Anywhere from 4 to 7 hours in a single session, or split across two sessions a few weeks apart for hair safety. Removing dark box dye to go blonde is the longest process — sometimes 8 hours total. Removing brass takes 2-3 hours.' },
+  { q: 'Will my hair be damaged?', a: 'Olaplex bond-builder is included in every step of every color correction at no extra charge. Romy will refuse a service that would compromise your hair integrity — and tell you the truth instead. We have walked guests through 3-session corrections specifically to avoid breakage.' },
+  { q: 'Can you fix at-home color disasters?', a: 'Yes — about 40% of our color corrections are at-home box-dye fixes. Black box dye, faded reds that turned orange, DIY bleach jobs that went brassy, accidental color buildup. There is no shame in showing up. Romy has seen it all.' },
+  { q: 'What if I had a salon do my color and it went wrong?', a: 'Bring photos of the original goal and the result you got. We work with what is on your head now, not what was promised. Romy will not speak ill of another stylist — but she will fix it.' }
+];
+---
+<BaseLayout
+  title="Color Correction in Fairfax VA | Master Colorist · Romy Salon"
+  description="Color correction by master colorist Romy in Old Town Fairfax. From box dye to brass, from bad highlights to fashion shades. From $350. Consultation required. Olaplex included."
+  ogImage="/color-vivid-red.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / Color Correction in Fairfax</div>
+    <h1>Color correction in Fairfax. <span class="italic">Honest, careful, transparent.</span></h1>
+    <p class="lede">Bad box dye. Brassy blonde. Faded fantasy. Bring it in — Romy is the colorist other Fairfax salons send their hardest cases to. From $350. Consultation required.</p>
+    <div class="cta-row">
+      <a href="mailto:info@romysalon.com?subject=Color%20Correction%20Consultation&body=Hi%20Romy%2C%20I%27d%20like%20to%20book%20a%20color%20correction%20consultation.%20I%27ve%20attached%20two%20photos%20in%20natural%20daylight." class="btn lg gold">Request Consultation</a>
+      <a href="tel:+15714075801" class="btn lg ghost">Call 571.407.5801</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Quick Answer</div>
+      <p><strong>Color correction at Romy Salon starts at $350 and requires a free 20-minute consultation first (in person or via video).</strong> Common corrections we do: removing black box dye to go blonde, fixing brassy highlights, recovering hair after a botched bleach, neutralizing unwanted tones, and rescuing fashion colors that washed out wrong. Olaplex bond-builder is included in every step. Most corrections take 4–7 hours in a single session — some are split across two visits for hair safety.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">What makes our color correction different</div>
+    <h2 class="section-h">Not a service. <span class="italic">A rescue mission.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>Free consultation first</h4><p>We do not quote blind. 20 minutes in person or video before you commit. You get a written estimate, the plan, and the realistic outcome — including what we cannot do.</p></div>
+      <div class="item"><h4>Honest about timelines</h4><p>Some corrections take 1 session. Some take 3. We tell you up front. Going from black box dye to platinum in 3 hours is a Pinterest fantasy — we won't sell it.</p></div>
+      <div class="item"><h4>Olaplex included, every step</h4><p>Bond-builder is non-negotiable on corrections. You won't see it as an upcharge on your bill. It's part of how we work.</p></div>
+      <div class="item"><h4>No judgment</h4><p>You're not the first person who tried a box dye at 2am. You're not the first person who left another salon in tears. Romy is here to fix it, not lecture you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h">Color correction <span class="italic">menu</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">All pricing is post-consultation. Olaplex bond-builder included. Final quote depends on length, density, starting condition, and desired result.</p>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">Tone Correction<span class="pdesc">Removing brass, neutralizing unwanted warmth, fixing too-cool tones. 2–3 hours.</span></div><div class="pprice">From $350</div></div>
+      <div class="prow"><div class="pname">Color Removal<span class="pdesc">Lifting box dye, fashion color buildup, dark color that needs to go. 3–5 hours.</span></div><div class="pprice">From $450</div></div>
+      <div class="prow"><div class="pname">Full Box-Dye Correction<span class="pdesc">Removing years of at-home color and rebuilding it as a healthy blonde or balayage. 5–7 hours.</span></div><div class="pprice">From $625</div></div>
+      <div class="prow"><div class="pname">Multi-Session Correction<span class="pdesc">When safety requires splitting the work across two appointments 2–6 weeks apart.</span></div><div class="pprice">From $750</div></div>
+      <div class="prow"><div class="pname">Fashion Color Rescue<span class="pdesc">Faded pinks/blues/silvers that turned the wrong color. 3–5 hours.</span></div><div class="pprice">From $425</div></div>
+    </div>
+    <p class="lp-price-foot">Best for: at-home box dye disasters · brassy blondes · faded fashion colors · botched bleach · grown-out salon highlights · pre-bridal corrections</p>
+  </div>
+</section>
+
+<section class="lp-compare">
+  <div class="wrap">
+    <div class="section-eyebrow">Which correction do you need?</div>
+    <h2 class="section-h">A <span class="italic">decision guide.</span></h2>
+    <div class="ornament"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>If your hair is</th><th>Recommended service</th><th>Sessions</th><th>Starting price</th></tr></thead>
+        <tbody>
+          <tr><td>Brassy or too warm</td><td>Tone Correction</td><td>1</td><td>$350</td></tr>
+          <tr><td>Faded color or buildup</td><td>Color Removal</td><td>1</td><td>$450</td></tr>
+          <tr><td>Box dye, want to go blonde</td><td>Full Box-Dye Correction</td><td>1–2</td><td>$625</td></tr>
+          <tr><td>Damaged from prior bleach</td><td>Multi-Session</td><td>2–3</td><td>$750</td></tr>
+          <tr><td>Pink/blue/silver gone wrong</td><td>Fashion Color Rescue</td><td>1</td><td>$425</td></tr>
+          <tr><td>Bad highlights from another salon</td><td>Tone or Color Removal</td><td>1–2</td><td>$350–$625</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="lp-expect">
+  <div class="wrap">
+    <div class="section-eyebrow">What to expect</div>
+    <h2 class="section-h">From consult to <span class="italic">reveal.</span></h2>
+    <div class="ornament"></div>
+    <div class="steps">
+      <div class="step"><span class="n">I.</span><div><h4>Free consultation</h4><p>20 minutes. Photos, history, goal, realistic outcome. Written quote.</p></div></div>
+      <div class="step"><span class="n">II.</span><div><h4>The deposit</h4><p>25% holds your appointment. Refundable up to 48 hours before.</p></div></div>
+      <div class="step"><span class="n">III.</span><div><h4>The day</h4><p>4–7 hours typically. Lunch included for sessions over 5 hours. WiFi is fast.</p></div></div>
+      <div class="step"><span class="n">IV.</span><div><h4>Bond repair + tone</h4><p>Olaplex finishing, custom gloss, deep condition. The hair leaves stronger than it arrived.</p></div></div>
+      <div class="step"><span class="n">V.</span><div><h4>Aftercare</h4><p>Take-home product, written maintenance plan, free 14-day toner refresh if needed.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Areas served</div>
+    <h2 class="section-h">Color correction for <span class="italic">all of Northern Virginia.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">Clients drive from across NoVA for color correction. Free street parking in Old Town Fairfax.</p>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>Annandale</div><div>McLean</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Common questions</div>
+    <h2 class="section-h">Before you <span class="italic">commit.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>Ready for the <span class="italic">honest plan?</span></h2>
+    <p>Free 20-minute consultation. No commitment. Bring your photos.</p>
+    <a href="mailto:info@romysalon.com?subject=Color%20Correction%20Consultation" class="btn lg gold">Request Consultation</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or call 571.407.5801</a>
+    <div class="updated">Page last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Color Correction in Fairfax VA',
+  'description':'Hair color correction by master colorist Romy in Old Town Fairfax. Box dye removal, brass correction, fashion color rescue, multi-session corrections. Olaplex included.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'offers':[
+    {'@type':'Offer','name':'Tone Correction','price':'350','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Color Removal','price':'450','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Full Box-Dye Correction','price':'625','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Multi-Session Correction','price':'750','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Fashion Color Rescue','price':'425','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+</BaseLayout>

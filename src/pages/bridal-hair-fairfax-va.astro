@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+const faqs = [
+  { q: 'How much is bridal hair and makeup in Fairfax VA?', a: 'At Romy Salon, our bridal packages start at $625 (Bride trial + day-of) and $1,425 for Bride plus 4 guests. On-location service within 30 miles of Old Town Fairfax starts at $1,850. All packages include the trial appointment, a touch-up kit, and a written timeline you can share with your planner.' },
+  { q: 'When should I book my bridal appointment?', a: 'For Saturday weddings in peak season (May–October), we book trials 4–6 months ahead and day-of dates fill 6–9 months out. For off-season or weekday weddings, 2–3 months is usually enough. Inquire as soon as you have a date — we hold dates with a 25% deposit, refundable up to 90 days before.' },
+  { q: 'What is included in the bridal trial?', a: 'A 90-minute trial includes consultation, two style tests (we shoot photos in different lighting), makeup, and a take-home written note of every product and tool we used so the day-of look is perfectly reproducible. The trial is included in every Bride package — not a separate fee.' },
+  { q: 'Do you do bridal makeup too?', a: 'Yes — Romy and our makeup artist work together for a seamless look. We use long-wear formulas tested under bridal photo lighting. False lashes, lash extensions, contour, and waterproof options all available.' },
+  { q: 'Do you travel on-location?', a: 'Yes. We bring the full kit + portable lighting to your venue within 30 miles of Old Town Fairfax (Westwood Country Club, The Winery at Bull Run, Fairview Park Marriott, etc.). Travel is included up to 30 miles; beyond that is quoted per location.' },
+  { q: 'Can you do quinceañera and special events too?', a: 'Yes. Quinceañeras are one of our specialties — we do trial + day-of styling in English and Spanish for the quinceañera plus her court of damas. Inquire via the contact form with the date and party size.' }
+];
+---
+<BaseLayout
+  title="Bridal Hair & Makeup in Fairfax VA | Romy Salon · Old Town Fairfax"
+  description="Bridal hair and makeup in Old Town Fairfax. Trial + day-of from $625. Bridal party packages and on-location within 30 mi available. Quinceañera artistry. Photos perfect under bridal lighting."
+  ogImage="/updo5.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/bridal">Bridal</a> / Bridal Hair in Fairfax</div>
+    <h1>Bridal hair &amp; makeup, <span class="italic">in Old Town Fairfax.</span></h1>
+    <p class="lede">From the trial to the final pin — Romy Salon crafts bridal styling with the precision of a wedding planner and the calm of a Sunday morning. Packages from $625.</p>
+    <div class="cta-row">
+      <a href="/bridal#inquire" class="btn lg gold">Inquire About Your Date</a>
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg ghost">Book a Trial</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Quick Answer</div>
+      <p><strong>Bridal services at Romy Salon in Fairfax VA start at $625 (Bride: trial + day-of styling).</strong> Larger packages: Bridal Party (bride + 4 guests, private styling room) is $1,425. On-location service within 30 miles of Old Town Fairfax starts at $1,850. Quinceañeras and special-event styling available in English and Spanish. Book 4–6 months ahead for peak season (May–October).</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">Why brides book Romy</div>
+    <h2 class="section-h">A calm bride. <span class="italic">A perfect timeline.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>The trial is the rehearsal</h4><p>90 minutes. Two looks. Photos in three lighting conditions. A written note of every product so day-of is exactly reproducible.</p></div>
+      <div class="item"><h4>Built-in timeline</h4><p>One week out, you get a written timeline you can share with your planner. We arrive on time, stay through last-look touchups when needed.</p></div>
+      <div class="item"><h4>Bridal-lighting tested</h4><p>The products we use are tested under bridal photography lighting. Foundation doesn't flash white. Lipstick reads true in candlelight.</p></div>
+      <div class="item"><h4>Bilingual service</h4><p>Romy and our team speak fluent Spanish. Bridal consultations and quinceañera services available in either language without translation lag.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Bridal pricing</div>
+    <h2 class="section-h">Three ways to <span class="italic">begin.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">All bridal packages can be customized. Travel within 30 miles of Old Town Fairfax included on on-location bookings.</p>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">The Bride — Trial + Day-Of<span class="pdesc">90-min trial worn home + day-of hair & makeup at the salon. Touch-up kit included. Champagne included.</span></div><div class="pprice">From $625</div></div>
+      <div class="prow"><div class="pname">The Bridal Party — Bride + 4 Guests<span class="pdesc">Everything in The Bride, plus hair + light makeup for 4 guests. Private styling room reserved. Mimosa + brunch service.</span></div><div class="pprice">From $1,425</div></div>
+      <div class="prow"><div class="pname">The On-Location — We Come to You<span class="pdesc">Romy + 1 assistant on-location. Up to 6 hours service time. Travel within 30 miles included. Stay-through for touchups.</span></div><div class="pprice">From $1,850</div></div>
+      <div class="prow"><div class="pname">The Quinceañera<span class="pdesc">Quinceañera trial + day-of hair & makeup. Damas styling priced per guest. Bilingual service.</span></div><div class="pprice">From $485</div></div>
+      <div class="prow"><div class="pname">Add-On: Lash Extensions for the Day<span class="pdesc">Classic or hybrid lashes lasting 2–3 weeks past the wedding.</span></div><div class="pprice">From $165</div></div>
+    </div>
+    <p class="lp-price-foot">25% deposit holds your date, refundable up to 90 days before the wedding.</p>
+  </div>
+</section>
+
+<section class="lp-compare">
+  <div class="wrap">
+    <div class="section-eyebrow">Romy Salon vs. mobile-only bridal services</div>
+    <h2 class="section-h">Why book a <span class="italic">salon bridal team.</span></h2>
+    <div class="ornament"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Romy Salon</th><th>Mobile-Only Stylist</th><th>Department-Store Counter</th></tr></thead>
+        <tbody>
+          <tr><td>Trial photographed in 3 lighting conditions</td><td>Yes</td><td>Sometimes</td><td>No</td></tr>
+          <tr><td>Written day-of timeline</td><td>Yes</td><td>Sometimes</td><td>No</td></tr>
+          <tr><td>Private styling room for bridal party</td><td>Yes (4+ guests)</td><td>No (your home)</td><td>No</td></tr>
+          <tr><td>On-location available</td><td>Yes (30mi)</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Bilingual (Spanish)</td><td>Yes</td><td>Varies</td><td>Rarely</td></tr>
+          <tr><td>Long-wear formula for photography</td><td>Yes</td><td>Varies</td><td>No</td></tr>
+          <tr><td>Last-look touch-up service</td><td>Yes (on-location)</td><td>Varies</td><td>No</td></tr>
+          <tr><td>Starting price</td><td>$625 (incl trial)</td><td>$400–700</td><td>$50–125</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="lp-expect">
+  <div class="wrap">
+    <div class="section-eyebrow">The process</div>
+    <h2 class="section-h">From inquiry to <span class="italic">"I do."</span></h2>
+    <div class="ornament"></div>
+    <div class="steps">
+      <div class="step"><span class="n">I.</span><div><h4>Inquiry (today)</h4><p>Submit your date and venue. We reply within 24 hours, Monday–Saturday.</p></div></div>
+      <div class="step"><span class="n">II.</span><div><h4>Date hold (within 7 days)</h4><p>25% deposit holds your date. Refundable up to 90 days before the wedding.</p></div></div>
+      <div class="step"><span class="n">III.</span><div><h4>Trial (4–8 weeks out)</h4><p>90 minutes. Two looks. Photos. Written reproducible plan. Worn home.</p></div></div>
+      <div class="step"><span class="n">IV.</span><div><h4>Pre-wedding confirmation (1 week out)</h4><p>Written timeline. Shared with your planner if you have one.</p></div></div>
+      <div class="step"><span class="n">V.</span><div><h4>Day-of</h4><p>On time. Calm. Quiet. Last-look touchups when needed. You walk into the photos exactly how you imagined.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Wedding venues we serve</div>
+    <h2 class="section-h">All of <span class="italic">Northern Virginia.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">On-location available at Westwood Country Club, The Winery at Bull Run, Fairview Park Marriott, Fairfax Golf Club, and venues across:</p>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>McLean</div><div>Leesburg</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Common questions</div>
+    <h2 class="section-h">Before your <span class="italic">inquiry.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>Ready to talk about <span class="italic">your day?</span></h2>
+    <p>We respond to bridal inquiries within 24 hours, Monday–Saturday.</p>
+    <a href="/bridal#inquire" class="btn lg gold">Submit Inquiry</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or call 571.407.5801</a>
+    <div class="updated">Page last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Bridal Hair and Makeup in Fairfax VA',
+  'description':'Bridal hair and makeup in Old Town Fairfax. Trial plus day-of styling. Bridal party packages and on-location service. Quinceañera artistry available in English and Spanish.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'offers':[
+    {'@type':'Offer','name':'The Bride — Trial + Day-Of','price':'625','priceCurrency':'USD'},
+    {'@type':'Offer','name':'The Bridal Party','price':'1425','priceCurrency':'USD'},
+    {'@type':'Offer','name':'On-Location Bridal','price':'1850','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Quinceañera Styling','price':'485','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+</BaseLayout>

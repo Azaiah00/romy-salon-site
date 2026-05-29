@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+const faqs = [
+  { q: 'What is a head spa massage?', a: 'A head spa is a therapeutic scalp treatment combining deep cleansing, scalp analysis, pressure-point massage, aromatherapy, and conditioning. Think of it as a 30–90 minute facial for your scalp. Originated in Japanese hair salons, the head spa boomed on TikTok in 2024 and has become a fast-growing service across the US.' },
+  { q: 'How much is a head spa in Fairfax VA?', a: 'At Romy Salon, the Express Head Spa (30 min) is $75, the Signature Head Spa (60 min) is $135, and the Luxury Head Spa Ritual (90 min, includes foot soak, gua sha, and hot towel) is $210. You can also add a head spa to any hair service for $45.' },
+  { q: 'How long does a head spa take?', a: 'Express is 30 minutes, Signature is 60 minutes, and the Luxury Ritual is 90 minutes. The 60-minute Signature is our most-booked service — long enough to fully reset, short enough to fit a lunch hour.' },
+  { q: 'What are the benefits?', a: 'Deeper relaxation than a regular shampoo, improved scalp health (less itch, dandruff, oiliness), reduced tension headaches, better sleep that night, and a noticeable shine and softness in the hair afterward. Not medical claims — guest-reported benefits we hear consistently.' },
+  { q: 'Can I get a head spa if I have hair extensions or color?', a: 'Yes. The pressure-point massage and cleansing are completely safe for extensions, color-treated hair, and chemically treated hair. We adjust the products and pressure based on what your scalp and strands need.' },
+  { q: 'Do I need to wash my hair before?', a: 'No — please come with your normal hair (dirty hair is actually better for the deep cleanse). Your hair leaves clean, conditioned, and styled.' }
+];
+---
+<BaseLayout
+  title="Head Spa Massage in Fairfax VA | The Restorative Ritual · Romy Salon"
+  description="Head spa massage in Old Town Fairfax. 30, 60, or 90 minutes. Scalp analysis, pressure-point massage, aromatherapy, deep conditioning. From $75. The TikTok-viral ritual."
+  ogImage="/massage.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / Head Spa in Fairfax</div>
+    <h1>The head spa massage. <span class="italic">A 60-minute reset.</span></h1>
+    <p class="lede">Deep scalp cleansing, pressure-point massage, aromatherapy. The most-restorative thing you can book in Old Town Fairfax. From $75.</p>
+    <div class="cta-row">
+      <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Your Head Spa</a>
+      <a href="#pricing" class="btn lg ghost">See Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Quick Answer</div>
+      <p><strong>Head spa massage at Romy Salon in Fairfax VA starts at $75 for the 30-minute Express, $135 for the 60-minute Signature, and $210 for the 90-minute Luxury Ritual.</strong> The treatment includes scalp analysis under magnification, deep cleansing, pressure-point scalp + neck + shoulder massage, aromatherapy, and deep conditioning. You can add a head spa to any color or cut for $45. Come with normal hair (dirty hair cleanses better). Leave with clean, conditioned, styled hair and a quieter nervous system.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">Why a head spa?</div>
+    <h2 class="section-h">A facial. <span class="italic">For your scalp.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>Scalp health first</h4><p>We analyze your scalp under magnification before the treatment. Itchy, oily, dry, sensitive — each gets a different product approach. Your scalp ages just like your face.</p></div>
+      <div class="item"><h4>Real pressure-point work</h4><p>Not a quick rub during shampoo. 20+ minutes of pressure-point massage across the scalp, temples, neck, and shoulders. People fall asleep. Snoring is common. We don't mind.</p></div>
+      <div class="item"><h4>Aromatherapy that suits you</h4><p>Three blends to choose from based on mood — calming lavender + rose, awakening citrus + mint, grounding sandalwood + chamomile. You smell incredible for hours after.</p></div>
+      <div class="item"><h4>Pair with any service</h4><p>Add $45 to any color, cut, or facial and your visit becomes a multi-stage spa day. Most people who try it once make it part of every visit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h">Three lengths, <span class="italic">three depths.</span></h2>
+    <div class="ornament"></div>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">Express Head Spa<span class="pdesc">Scalp massage + deep conditioning. Fits a lunch hour.</span></div><div class="pprice">$75 · 30 min</div></div>
+      <div class="prow"><div class="pname">Signature Head Spa<span class="pdesc">Full scalp + neck + shoulder, aromatherapy, deep conditioning. Our most-booked.</span></div><div class="pprice">$135 · 60 min</div></div>
+      <div class="prow"><div class="pname">Luxury Head Spa Ritual<span class="pdesc">Everything in Signature, plus foot soak, hot towel, gua sha facial.</span></div><div class="pprice">$210 · 90 min</div></div>
+      <div class="prow"><div class="pname">Add-On to Any Service<span class="pdesc">When booked with any hair, facial, or nail service.</span></div><div class="pprice">$45</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-compare">
+  <div class="wrap">
+    <div class="section-eyebrow">Head spa vs. other relaxation services</div>
+    <h2 class="section-h">Where it <span class="italic">fits.</span></h2>
+    <div class="ornament"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Head Spa</th><th>Regular Massage</th><th>Facial</th><th>Scalp Treatment at Drugstore</th></tr></thead>
+        <tbody>
+          <tr><td>Scalp analysis</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Pressure-point massage</td><td>Yes</td><td>Yes</td><td>Sometimes</td><td>No</td></tr>
+          <tr><td>Deep conditioning</td><td>Yes</td><td>No</td><td>No</td><td>Maybe</td></tr>
+          <tr><td>Aromatherapy</td><td>Yes</td><td>Sometimes</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Improves hair shine + softness</td><td>Yes</td><td>No</td><td>No</td><td>Some</td></tr>
+          <tr><td>Time</td><td>30–90 min</td><td>60 min</td><td>60 min</td><td>10 min</td></tr>
+          <tr><td>Starting price</td><td>$75</td><td>$100+</td><td>$150+</td><td>$10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="lp-expect">
+  <div class="wrap">
+    <div class="section-eyebrow">What to expect</div>
+    <h2 class="section-h">From check-in to <span class="italic">drowsy.</span></h2>
+    <div class="ornament"></div>
+    <div class="steps">
+      <div class="step"><span class="n">I.</span><div><h4>Scalp consult</h4><p>3–5 minutes. We look at your scalp under magnification and ask about itch, oiliness, sensitivity, headaches.</p></div></div>
+      <div class="step"><span class="n">II.</span><div><h4>Pre-cleanse + analysis</h4><p>Warm towel, double cleanse, exfoliation if needed. Pick your aromatherapy.</p></div></div>
+      <div class="step"><span class="n">III.</span><div><h4>The massage</h4><p>20–60 minutes depending on length chosen. Scalp, temples, neck, shoulders. Pressure points held longer where there's tension.</p></div></div>
+      <div class="step"><span class="n">IV.</span><div><h4>Deep treatment</h4><p>Conditioner left to process. Hot towel. (Many guests fall asleep here.)</p></div></div>
+      <div class="step"><span class="n">V.</span><div><h4>Style + recommendations</h4><p>Quick blowout. Take-home product recommendations for ongoing scalp health.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Areas served</div>
+    <h2 class="section-h">The reset for <span class="italic">all of Northern Virginia.</span></h2>
+    <div class="ornament"></div>
+    <p class="section-sub">Free street parking in Old Town Fairfax. Sundays available.</p>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>McLean</div><div>Annandale</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Common questions</div>
+    <h2 class="section-h">Before your <span class="italic">first one.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>The hour you've been <span class="italic">looking for.</span></h2>
+    <p>Same-week appointments often available.</p>
+    <a href="https://booking.mangomint.com/romysalonandspa" target="_blank" rel="noopener" class="btn lg gold">Book Online</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or call 571.407.5801</a>
+    <div class="updated">Page last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Head Spa Massage in Fairfax VA',
+  'description':'Restorative head spa scalp massage treatment in Old Town Fairfax. Scalp analysis, pressure-point massage, aromatherapy, deep conditioning.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'offers':[
+    {'@type':'Offer','name':'Express Head Spa','price':'75','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Signature Head Spa','price':'135','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Luxury Head Spa Ritual','price':'210','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+</BaseLayout>

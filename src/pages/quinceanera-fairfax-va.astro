@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/landing-page.css';
+const lastUpdated = '2026-05-28';
+
+// Bilingual page — Spanish first, English second on each section
+const faqs = [
+  { q: '¿Cuánto cuesta el peinado y maquillaje para una quinceañera?', a: 'En Romy Salon, el paquete básico para la quinceañera incluye una prueba (trial) de peinado y maquillaje y el día del evento, desde $485. El paquete con las damas (corte de honor) se cotiza según el número de damas. Inquiere con la fecha y el tamaño del grupo y respondemos en 24 horas.' },
+  { q: 'How much is quinceañera hair and makeup in Fairfax VA?', a: 'At Romy Salon, the Quinceañera package (trial + day-of styling for the quinceañera) starts at $485. Damas (court of honor) styling is quoted per person. Inquire with your date and party size — we respond within 24 hours, Monday through Saturday.' },
+  { q: '¿Hacen el peinado de las damas también?', a: 'Sí. Hacemos el peinado de las damas en el salón el mismo día o en el sitio del evento. Los paquetes con damas se cotizan según el número de chicas. La quinceañera tiene su propia sala privada de styling con champagne y un tocador.' },
+  { q: 'Do you also style the damas (court of honor)?', a: 'Yes. We style the damas at the salon the same day, or on-location at your venue. Damas packages are quoted per guest. The quinceañera herself gets a private styling room with champagne and her own dressing table.' },
+  { q: '¿Cuándo debo reservar?', a: 'Para fiestas en sábados de mayo a octubre, reserva 4 a 6 meses antes. Para fechas en otras temporadas, 2 a 3 meses suele ser suficiente. Reservamos la fecha con un depósito del 25% reembolsable hasta 90 días antes.' },
+  { q: 'When should I book?', a: 'For Saturday quinceañeras in peak season (May–October), book 4–6 months ahead. For off-season dates, 2–3 months is usually enough. A 25% deposit holds your date, refundable up to 90 days before.' },
+  { q: '¿Hablan español el día del evento?', a: 'Sí. Romy y varias estilistas hablan español con fluidez. Todas las conversaciones, instrucciones, y la prueba se pueden hacer completamente en español sin retraso de traducción.' },
+  { q: 'Do you speak Spanish on the day of the event?', a: 'Yes. Romy and several stylists speak fluent Spanish. All consultations, instructions, and the trial can be conducted entirely in Spanish without translation lag.' },
+  { q: '¿Pueden ir al lugar del evento?', a: 'Sí. Servicio en el sitio (on-location) hasta 30 millas de Old Town Fairfax. Llevamos el equipo completo, iluminación portátil, y nos quedamos para retoques cuando es necesario. Pregunta por el costo según tu lugar.' },
+  { q: 'Can you come on-location?', a: 'Yes. On-location service available within 30 miles of Old Town Fairfax. We bring the full kit, portable lighting, and stay through last-look touch-ups when needed. Travel is included up to 30 miles; beyond that is quoted per location.' }
+];
+---
+<BaseLayout
+  title="Peinado y Maquillaje para Quinceañera en Fairfax VA | Romy Salon"
+  description="Peinado y maquillaje para quinceañeras en Old Town Fairfax. Servicio bilingüe (español e inglés). Desde $485 — incluye prueba y día del evento. Servicio en el sitio disponible."
+  ogImage="/updo5.jpg"
+>
+
+<section class="lp-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home / Inicio</a> / Quinceañera en Fairfax</div>
+    <h1>Quinceañera. <span class="italic">El día que se recuerda toda la vida.</span></h1>
+    <p class="lede">Peinado y maquillaje para quinceañeras en Old Town Fairfax — servicio completo en español e inglés. Desde $485. Damas incluidas. Servicio en el sitio disponible.</p>
+    <div class="cta-row">
+      <a href="/bridal#inquire" class="btn lg gold">Reservar / Inquire</a>
+      <a href="tel:+15714075801" class="btn lg ghost">Llamar 571.407.5801</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="wrap">
+    <div class="qa-card">
+      <div class="qa-eyebrow">Respuesta Rápida · Quick Answer</div>
+      <p><strong>El paquete de quinceañera en Romy Salon empieza desde $485</strong> e incluye una prueba (trial) y el peinado + maquillaje el día del evento. Las damas (corte de honor) se cotizan por persona. Servicio completamente bilingüe (español e inglés). Disponible en el salón en Old Town Fairfax o en el sitio del evento hasta 30 millas de distancia.</p>
+      <p style="margin-top:12px"><strong>Quinceañera package at Romy Salon starts at $485</strong> — includes a trial and day-of hair + makeup. Damas (court of honor) priced per guest. Fully bilingual service (English &amp; Spanish). Available at the Old Town Fairfax salon or on-location up to 30 miles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-diff">
+  <div class="wrap">
+    <div class="section-eyebrow">Por qué Romy Salon · Why Romy Salon</div>
+    <h2 class="section-h">Bilingüe. <span class="italic">Profesional. Calmado.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div class="item"><h4>Bilingüe · Bilingual</h4><p>Toda la cita — desde la consulta hasta el día del evento — se puede hacer completamente en español. The entire appointment — from consultation to day-of — can be done entirely in Spanish.</p></div>
+      <div class="item"><h4>Sala privada · Private room</h4><p>La quinceañera tiene su propia sala privada con champagne sin alcohol y un tocador completo. The quinceañera gets her own private styling room with non-alcoholic champagne and a full dressing table.</p></div>
+      <div class="item"><h4>Damas incluidas · Damas included</h4><p>Peinamos a todas las damas al mismo tiempo en el salón o en el sitio. We style all the damas together either at the salon or on-location.</p></div>
+      <div class="item"><h4>Maquillaje de fotografía · Photo-ready makeup</h4><p>Productos resistentes al sudor y a las fotos, probados bajo iluminación de eventos. Sweat-resistant and photo-tested makeup, formulated for event lighting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Precios · Pricing</div>
+    <h2 class="section-h">Paquetes para <span class="italic">tu día.</span></h2>
+    <div class="ornament"></div>
+    <div class="lp-price-table">
+      <div class="prow"><div class="pname">La Quinceañera<span class="pdesc">Prueba + peinado + maquillaje el día del evento. Sala privada incluida.<br>Trial + day-of hair + makeup. Private room included.</span></div><div class="pprice">Desde $485</div></div>
+      <div class="prow"><div class="pname">Damas · Court of Honor<span class="pdesc">Peinado para cada dama. En el salón o en el sitio.<br>Hair styling per dama. Salon or on-location.</span></div><div class="pprice">$95 por dama</div></div>
+      <div class="prow"><div class="pname">Maquillaje para Damas<span class="pdesc">Maquillaje ligero para cada dama. Resistente al evento.<br>Light makeup per dama. Event-resistant.</span></div><div class="pprice">$75 por dama</div></div>
+      <div class="prow"><div class="pname">Servicio en el Sitio · On-Location<span class="pdesc">Llevamos todo al lugar del evento dentro de 30 millas.<br>We bring everything to your venue within 30 miles.</span></div><div class="pprice">Desde $1,850</div></div>
+      <div class="prow"><div class="pname">Pestañas Postizas para el Día<span class="pdesc">Classic o hybrid lashes que duran 2–3 semanas.<br>Classic or hybrid lashes lasting 2–3 weeks.</span></div><div class="pprice">Desde $165</div></div>
+    </div>
+    <p class="lp-price-foot">Depósito del 25% reserva tu fecha, reembolsable hasta 90 días antes. · 25% deposit holds your date, refundable up to 90 days before.</p>
+  </div>
+</section>
+
+<section class="lp-expect">
+  <div class="wrap">
+    <div class="section-eyebrow">El Proceso · The Process</div>
+    <h2 class="section-h">De la consulta al <span class="italic">vals.</span></h2>
+    <div class="ornament"></div>
+    <div class="steps">
+      <div class="step"><span class="n">I.</span><div><h4>Consulta / Consultation</h4><p>Llámanos o envíanos un mensaje. Hablamos del tema, los colores del vestido, la corte. We talk theme, dress colors, the court.</p></div></div>
+      <div class="step"><span class="n">II.</span><div><h4>Reserva / Booking</h4><p>Depósito del 25%. Recibes una confirmación por correo. 25% deposit. You get an email confirmation.</p></div></div>
+      <div class="step"><span class="n">III.</span><div><h4>Prueba / Trial</h4><p>Dos look completos. Fotos en distintas luces. Two complete looks. Photos in three lighting conditions.</p></div></div>
+      <div class="step"><span class="n">IV.</span><div><h4>Día del Evento / Day-Of</h4><p>Sala privada para la quinceañera. Damas peinadas en grupo. Private room for the quinceañera. Damas styled as a group.</p></div></div>
+      <div class="step"><span class="n">V.</span><div><h4>Retoques / Touch-Ups</h4><p>Kit para llevar al evento. Servicio en el sitio si lo prefieres. Touch-up kit to bring. On-location stay-through available.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-areas">
+  <div class="wrap">
+    <div class="section-eyebrow">Servimos · We Serve</div>
+    <h2 class="section-h">Todo el <span class="italic">norte de Virginia.</span></h2>
+    <div class="ornament"></div>
+    <div class="grid">
+      <div>Fairfax</div><div>Vienna</div><div>Oakton</div><div>Fairfax Station</div>
+      <div>Burke</div><div>Centreville</div><div>Reston</div><div>Arlington</div>
+      <div>Falls Church</div><div>Alexandria</div><div>Manassas</div><div>Annandale</div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Preguntas Frecuentes · FAQ</div>
+    <h2 class="section-h">Antes de tu <span class="italic">cita.</span></h2>
+    <div class="ornament"></div>
+    <div class="list">
+      {faqs.map(f => (
+        <details><summary>{f.q}</summary><div class="a">{f.a}</div></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="lp-final">
+  <div class="wrap">
+    <h2>¿Lista para <span class="italic">reservar?</span></h2>
+    <p>Respondemos en 24 horas, lunes a sábado. We respond within 24 hours, Monday–Saturday.</p>
+    <a href="/bridal#inquire" class="btn lg gold">Inquire / Reservar</a>
+    <a href="tel:+15714075801" class="btn lg ghost" style="margin-left:8px">Or 571.407.5801</a>
+    <div class="updated">Page last updated · Actualizada: {new Date(lastUpdated).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric'})}</div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'Service',
+  'name':'Quinceañera Hair & Makeup in Fairfax VA',
+  'description':'Bilingual quinceañera hair and makeup styling in Old Town Fairfax. Trial + day-of styling. Damas (court of honor) packages. On-location service available. Service available entirely in Spanish.',
+  'provider':{'@type':'HairSalon','name':'Romy Salon & Spa','@id':'https://romysalon.com/#business'},
+  'areaServed':[{'@type':'City','name':'Fairfax'},{'@type':'City','name':'Vienna'},{'@type':'City','name':'Oakton'},{'@type':'AdministrativeArea','name':'Northern Virginia'}],
+  'availableLanguage':['en','es'],
+  'offers':[
+    {'@type':'Offer','name':'Quinceañera Package','price':'485','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Dama Hair Styling','price':'95','priceCurrency':'USD'},
+    {'@type':'Offer','name':'Dama Makeup','price':'75','priceCurrency':'USD'},
+    {'@type':'Offer','name':'On-Location Quinceañera','price':'1850','priceCurrency':'USD'}
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context':'https://schema.org','@type':'FAQPage',
+  'mainEntity': faqs.map(f => ({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))
+})} />
+
+</BaseLayout>
