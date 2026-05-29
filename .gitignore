@@ -29,5 +29,6 @@ Thumbs.db
 # Astro
 .astro/
 
-# Large media files - host on CDN instead
+# Large media files - host on CDN instead. Keep the compressed web loop.
 public/*.mp4
+!public/salon-bg.mp4
