@@ -97,6 +97,17 @@ const igTiles = [
 
 <!-- HERO -->
 <section class="hero">
+  <div class="petals" aria-hidden="true">
+    <span class="petal" style="left:6%;animation-duration:13s;animation-delay:0s"></span>
+    <span class="petal" style="left:18%;animation-duration:16s;animation-delay:3s;width:12px;height:12px"></span>
+    <span class="petal" style="left:31%;animation-duration:11s;animation-delay:1.5s"></span>
+    <span class="petal" style="left:45%;animation-duration:18s;animation-delay:5s;width:18px;height:18px"></span>
+    <span class="petal" style="left:59%;animation-duration:14s;animation-delay:2s"></span>
+    <span class="petal" style="left:72%;animation-duration:12s;animation-delay:6.5s;width:12px;height:12px"></span>
+    <span class="petal" style="left:84%;animation-duration:17s;animation-delay:1s"></span>
+    <span class="petal" style="left:91%;animation-duration:15s;animation-delay:4s;width:14px;height:14px"></span>
+    <span class="petal" style="left:25%;animation-duration:19s;animation-delay:8s;width:10px;height:10px"></span>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content">
@@ -389,8 +400,24 @@ const igTiles = [
   }
   .hero .hero-grid{
     display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-    width:100%;padding:60px 0;
+    width:100%;padding:60px 0;position:relative;z-index:2;
   }
+  /* cherry-blossom petals drifting through the hero */
+  .hero .petals{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .hero .petal{
+    position:absolute;top:-6%;width:15px;height:15px;opacity:0;
+    background:var(--rose);border-radius:150% 0 150% 0;transform:rotate(45deg);
+    animation-name:petalFall;animation-timing-function:linear;animation-iteration-count:infinite;
+  }
+  .hero .petal:nth-child(even){background:var(--rose-mid)}
+  .hero .petal:nth-child(3n){background:var(--rose-soft)}
+  @keyframes petalFall{
+    0%{transform:translate(0,-30px) rotate(0deg);opacity:0}
+    12%{opacity:.7}
+    85%{opacity:.7}
+    100%{transform:translate(50px,90vh) rotate(260deg);opacity:0}
+  }
+  @media(prefers-reduced-motion:reduce){.hero .petals{display:none}}
   .hero .hero-content{padding-right:40px;position:relative;z-index:2}
   .hero .eyebrow{
     color:var(--gold-deep);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
