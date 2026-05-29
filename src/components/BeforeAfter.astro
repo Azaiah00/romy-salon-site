@@ -3,13 +3,14 @@
  * BeforeAfter — draggable before/after reveal slider.
  *
  * Props:
- *  - before   : image URL shown on the LEFT of the handle (the "before" state)
- *  - after    : image URL shown on the RIGHT of the handle (the finished result)
- *  - alt      : accessible description of the transformation
- *  - start    : initial handle position 0–100 (default 50)
+ *  - before : image URL shown on the LEFT of the handle (the "before" state)
+ *  - after  : image URL shown on the RIGHT of the handle (the finished result)
+ *  - alt    : accessible description of the transformation
+ *  - start  : initial handle position 0–100 (default 50)
  *
- * Accessibility: a real <input type="range"> drives the reveal, so the slider
- * is keyboard-operable and screen-reader friendly. Pointer/touch drag is layered on top.
+ * Interaction: pointer events on the stage drive the reveal, so tap-and-drag
+ * works on touch (mobile) as well as mouse. A visually-hidden <input type="range">
+ * remains for keyboard / screen-reader operation.
  */
 interface Props {
   before: string;
@@ -43,8 +44,9 @@ const { before, after, alt, start = 50 } = Astro.props;
       </span>
     </div>
 
+    <!-- Keyboard / screen-reader control (pointer handled on the stage) -->
     <input class="ba-range" type="range" min="0" max="100" value={start}
-           aria-label={`Reveal slider: ${alt}. Drag to compare before and after.`} />
+           aria-label={`Reveal slider: ${alt}. Use arrow keys, or drag, to compare before and after.`} />
   </div>
 </figure>
 
@@ -52,27 +54,26 @@ const { before, after, alt, start = 50 } = Astro.props;
   .ba-slider{ margin:0; }
   .ba-stage{
     position:relative; width:100%; aspect-ratio:3/4; overflow:hidden;
-    background:var(--bg-cream); user-select:none; touch-action:pan-y;
+    background:var(--bg-cream); user-select:none;
+    /* allow vertical page scroll, but let horizontal drags move the slider */
+    touch-action:pan-y; cursor:ew-resize; container-type:inline-size;
     box-shadow:0 2px 24px rgba(167,127,142,0.10);
   }
   .ba-img{
     position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; display:block; pointer-events:none;
+    object-fit:cover; display:block; pointer-events:none; -webkit-user-drag:none;
   }
   .ba-before-clip{
-    position:absolute; inset:0; width:var(--pos); overflow:hidden;
-    will-change:width;
+    position:absolute; inset:0; width:var(--pos); overflow:hidden; will-change:width;
   }
   /* keep the before image full-bleed inside the clip so it doesn't squash */
   .ba-before-clip .ba-before{ width:100cqw; }
-  .ba-stage{ container-type:inline-size; }
 
   .ba-tag{
-    position:absolute; top:16px; z-index:3;
+    position:absolute; top:16px; z-index:3; pointer-events:none;
     font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600;
     letter-spacing:0.22em; text-transform:uppercase; color:var(--ink);
-    background:rgba(253,248,244,0.92); padding:6px 12px;
-    backdrop-filter:blur(2px);
+    background:rgba(253,248,244,0.92); padding:6px 12px; backdrop-filter:blur(2px);
   }
   .ba-tag-before{ left:16px; }
   .ba-tag-after{ right:16px; }
@@ -91,38 +92,63 @@ const { before, after, alt, start = 50 } = Astro.props;
     width:46px; height:46px; border-radius:50%;
     background:var(--paper); color:var(--gold-deep);
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(167,127,142,0.32);
-    border:1px solid var(--gold);
+    box-shadow:0 4px 16px rgba(167,127,142,0.32); border:1px solid var(--gold);
+  }
+  /* larger touch target for the knob on small screens */
+  @media(max-width:900px){
+    .ba-knob{ width:52px; height:52px; }
   }
 
-  /* the real control: invisible full-stage range */
+  /* keyboard control only — visually hidden, pointer events pass through to the stage */
   .ba-range{
-    position:absolute; inset:0; width:100%; height:100%; margin:0;
-    opacity:0; cursor:ew-resize; z-index:5;
+    position:absolute; left:0; bottom:0; width:100%; height:2px; margin:0;
+    opacity:0; pointer-events:none; z-index:5;
     -webkit-appearance:none; appearance:none; background:transparent;
   }
-  .ba-range::-webkit-slider-thumb{
-    -webkit-appearance:none; appearance:none; width:46px; height:100%;
+  .ba-slider:focus-within .ba-knob{
+    box-shadow:0 0 0 4px var(--rose-pale),0 4px 16px rgba(167,127,142,0.32);
   }
-  .ba-range::-moz-range-thumb{ width:46px; height:100%; border:0; background:transparent; }
-  .ba-range:focus-visible + .ba-line,
-  .ba-range:focus-visible{ outline:none; }
-  .ba-slider:focus-within .ba-knob{ box-shadow:0 0 0 4px var(--rose-pale),0 4px 16px rgba(167,127,142,0.32); }
 </style>
 
 <script is:inline>
-  // Initialise every slider on the page.
+  // Pointer-driven reveal — works for touch + mouse + pen. Runs once for all sliders.
   (function () {
-    function initBeforeAfter() {
+    function init() {
       document.querySelectorAll('.ba-slider').forEach(function (slider) {
+        var stage = slider.querySelector('.ba-stage');
         var range = slider.querySelector('.ba-range');
-        if (!range) return;
-        var apply = function () { slider.style.setProperty('--pos', range.value + '%'); };
-        range.addEventListener('input', apply);
-        apply();
+        if (!stage) return;
+
+        function set(p) {
+          p = p < 0 ? 0 : (p > 100 ? 100 : p);
+          slider.style.setProperty('--pos', p + '%');
+          if (range) range.value = String(p);
+        }
+        function fromEvent(e) {
+          var r = stage.getBoundingClientRect();
+          return ((e.clientX - r.left) / r.width) * 100;
+        }
+
+        var dragging = false;
+        stage.addEventListener('pointerdown', function (e) {
+          dragging = true;
+          if (stage.setPointerCapture) { try { stage.setPointerCapture(e.pointerId); } catch (_) {} }
+          set(fromEvent(e));
+        });
+        stage.addEventListener('pointermove', function (e) {
+          if (dragging) set(fromEvent(e));
+        });
+        function end() { dragging = false; }
+        stage.addEventListener('pointerup', end);
+        stage.addEventListener('pointercancel', end);
+
+        // keyboard (arrow keys on the hidden range)
+        if (range) range.addEventListener('input', function () {
+          slider.style.setProperty('--pos', range.value + '%');
+        });
       });
     }
-    if (document.readyState !== 'loading') initBeforeAfter();
-    else document.addEventListener('DOMContentLoaded', initBeforeAfter);
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
   })();
 </script>
